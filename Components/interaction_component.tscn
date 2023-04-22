@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://jc86ncwi4tw5"]
+
+[ext_resource type="Script" path="res://Components/InteractionComponent.gd" id="1_igxtf"]
+[ext_resource type="AudioStream" uid="uid://cely2u6utgdpg" path="res://Sounds/Short - Ploppy Plop.wav" id="2_2ftie"]
+[ext_resource type="Texture2D" uid="uid://b6lo6kfnsbm01" path="res://Art/tile_0004.png" id="3_rm40k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uifr2"]
+size = Vector3(5, 5, 5)
+
+[node name="InteractionComponent" type="Node3D"]
+script = ExtResource("1_igxtf")
+interact_collision_size = Vector3(5, 5, 5)
+
+[node name="InteractArea3D" type="Area3D" parent="." groups=["Interactable"]]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="InteractCollisionShape3D" type="CollisionShape3D" parent="InteractArea3D"]
+shape = SubResource("BoxShape3D_uifr2")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="InteractSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("2_2ftie")
+pitch_scale = 1.67
+
+[node name="buttons_prompt" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -168.0
+offset_right = 20.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_rm40k")
+
+[connection signal="body_entered" from="InteractArea3D" to="." method="_on_interact_area_3d_body_entered"]
+[connection signal="body_exited" from="InteractArea3D" to="." method="_on_interact_area_3d_body_exited"]

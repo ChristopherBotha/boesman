@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw7amgv3ynn2c"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_fqnir"]
+[ext_resource type="Script" path="res://Player/CameraOrbit.gd" id="2_if32x"]
+[ext_resource type="PackedScene" uid="uid://chxsrct6s1bko" path="res://Components/health_component.tscn" id="2_rdcua"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enfy3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_411u4"]
+size = Vector3(1, 2, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 4
+script = ExtResource("1_fqnir")
+
+[node name="CameraOrbit" type="Node3D" parent="."]
+script = ExtResource("2_if32x")
+
+[node name="h" type="Node3D" parent="CameraOrbit"]
+
+[node name="v" type="Node3D" parent="CameraOrbit/h"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraOrbit/h/v"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.640415, 0)
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrbit/h/v/SpringArm3D"]
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_enfy3")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Body" type="MeshInstance3D" parent="Mesh"]
+mesh = SubResource("BoxMesh_411u4")
+skeleton = NodePath("../..")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_rdcua")]

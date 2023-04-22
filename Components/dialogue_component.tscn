@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://byqwwru2h67fk"]
+
+[ext_resource type="Script" path="res://Components/DialogueComponent.gd" id="1_mvytv"]
+
+[node name="DialogueComponent" type="Node3D"]
+script = ExtResource("1_mvytv")

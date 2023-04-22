@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbdfl0viw8l73"]
+
+[ext_resource type="Texture2D" uid="uid://bfvb3sq35w8iq" path="res://Textures/texture_08.png" id="1_hf36j"]
+[ext_resource type="PackedScene" uid="uid://jc86ncwi4tw5" path="res://Components/interaction_component.tscn" id="2_tlmiy"]
+[ext_resource type="PackedScene" uid="uid://byqwwru2h67fk" path="res://Components/dialogue_component.tscn" id="3_q2h31"]
+[ext_resource type="Resource" uid="uid://bn2wbfco7m621" path="res://dialogues/prisoner2.dialogue" id="4_md3i4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8evef"]
+albedo_texture = ExtResource("1_hf36j")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy788"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5ywrs"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_8evef")
+use_collision = true
+size = Vector3(50, 1, 50)
+
+[node name="NPC" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94848, 1.63428, -6.73077)
+
+[node name="InteractionComponent" parent="NPC" node_paths=PackedStringArray("dialogue_component") instance=ExtResource("2_tlmiy")]
+interact_collision_size = Vector3(3, 3, 3)
+dialogue_component = NodePath("../DialogueComponent")
+
+[node name="DialogueComponent" parent="NPC" instance=ExtResource("3_q2h31")]
+dialogue_resource = ExtResource("4_md3i4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
+material_override = SubResource("StandardMaterial3D_dy788")
+mesh = SubResource("CapsuleMesh_5ywrs")
