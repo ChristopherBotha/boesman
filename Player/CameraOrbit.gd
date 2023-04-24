@@ -14,6 +14,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera_3d.fov = fov
 	
+	
 func _unhandled_input(event):
 	
 	if event is InputEventMouseMotion:

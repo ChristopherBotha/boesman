@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbdfl0viw8l73"]
+[gd_scene load_steps=19 format=3 uid="uid://dbdfl0viw8l73"]
 
 [ext_resource type="Texture2D" uid="uid://bfvb3sq35w8iq" path="res://Textures/texture_08.png" id="1_hf36j"]
 [ext_resource type="PackedScene" uid="uid://jc86ncwi4tw5" path="res://Components/interaction_component.tscn" id="2_tlmiy"]
 [ext_resource type="PackedScene" uid="uid://byqwwru2h67fk" path="res://Components/dialogue_component.tscn" id="3_q2h31"]
 [ext_resource type="Resource" uid="uid://bn2wbfco7m621" path="res://dialogues/prisoner2.dialogue" id="4_md3i4"]
+[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="5_xewdf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8evef"]
 albedo_texture = ExtResource("1_hf36j")
@@ -14,15 +15,73 @@ albedo_color = Color(0.2, 0.2, 0.2, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5ywrs"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8utvp"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_io4ou"]
+seamless = true
+noise = SubResource("FastNoiseLite_8utvp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gpxs7"]
+noise_type = 3
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7iu38"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_gpxs7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p63ya"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ha38o"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_p63ya")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ssek5"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qjb3t"]
+seamless = true
+noise = SubResource("FastNoiseLite_ssek5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfjlo"]
+render_priority = 0
+shader = ExtResource("5_xewdf")
+shader_parameter/wave_speed = -0.106
+shader_parameter/wave_a = Quaternion(1, 1, 0.35, 3)
+shader_parameter/wave_b = Quaternion(1, 0.6, 0.3, 1.55)
+shader_parameter/wave_c = Quaternion(1, 1.3, 0.25, 0.9)
+shader_parameter/sampler_scale = Vector2(0.01, 0.01)
+shader_parameter/sampler_direction = Vector2(0.01, 0.01)
+shader_parameter/uv_sampler_scale = Vector2(0.01, 0.01)
+shader_parameter/uv_sampler_strength = 0.04
+shader_parameter/foam_level = 0.5
+shader_parameter/refraction = 0.075
+shader_parameter/color_deep = Color(0.121569, 0.121569, 0.462745, 1)
+shader_parameter/color_shallow = Color(0.27451, 0.490196, 1, 1)
+shader_parameter/beers_law = 0.289
+shader_parameter/depth_offset = -2.71
+shader_parameter/projector = null
+shader_parameter/uv_sampler = SubResource("NoiseTexture2D_qjb3t")
+shader_parameter/normalmap_a_sampler = SubResource("NoiseTexture2D_7iu38")
+shader_parameter/normalmap_b_sampler = SubResource("NoiseTexture2D_ha38o")
+shader_parameter/foam_sampler = SubResource("NoiseTexture2D_io4ou")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uk4gc"]
+size = Vector2(100, 100)
+
 [node name="TestLevel" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51.8747, 0)
 material_override = SubResource("StandardMaterial3D_8evef")
 use_collision = true
-size = Vector3(50, 1, 50)
+size = Vector3(30, 100, 30)
 
 [node name="NPC" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94848, 1.63428, -6.73077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94848, -0.928381, -6.73077)
 
 [node name="InteractionComponent" parent="NPC" node_paths=PackedStringArray("dialogue_component") instance=ExtResource("2_tlmiy")]
 interact_collision_size = Vector3(3, 3, 3)
@@ -34,3 +93,8 @@ dialogue_resource = ExtResource("4_md3i4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NPC"]
 material_override = SubResource("StandardMaterial3D_dy788")
 mesh = SubResource("CapsuleMesh_5ywrs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.59434, 0)
+material_override = SubResource("ShaderMaterial_nfjlo")
+mesh = SubResource("PlaneMesh_uk4gc")

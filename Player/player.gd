@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 @onready var animation_tree: AnimationTree = $Mesh/AnimationTree
+@onready var playback = $Mesh/AnimationTree.get("parameters/playback")
 
 @export var healthComp : HealthComponent
 @export var stats : StatsComponent
@@ -12,44 +13,64 @@ class_name Player
 
 var JUMP_VELOCITY := 4.5
 var current_rotation : Quaternion 
-
+var current_dir := Vector3.ZERO
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
- 
+
+var prev_cam_rot = 0.0
+
 func _ready()-> void:
+#	animation_tree.set("parameters/Move/blend_position", Vector2(current_dir.x,current_dir.z))
 	pass
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		
+	
 	var rot : Quaternion = animation_tree.get_root_motion_rotation()
 	var h_rot = $CameraOrbit/h.global_transform.basis.get_euler().y
 	
+	var cam_rot = $CameraOrbit/h.global_rotation_degrees.y
+	
+	print(rotation)
+	if cam_rot > prev_cam_rot:
+		print("left")
+	elif cam_rot < prev_cam_rot:
+		print("right")
+	
+	prev_cam_rot = cam_rot
+		
 	if camera_orbit.camrot_h != 0 and actions.aiming == true:
 		$Mesh.rotation.y = lerp_angle($Mesh.rotation.y, h_rot, delta * 5)
 	
-	# Handle Jump.
+	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir = Vector3(Input.get_action_strength("right") - Input.get_action_strength("left"),0,
+			Input.get_action_strength("forward") - Input.get_action_strength("backward"))
+	
+	current_dir = current_dir.lerp(input_dir.normalized(),0.05)
+	
+	animation_tree.set("parameters/Move/blend_position", Vector2(current_dir.x,current_dir.z))
+	
+	
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.z)).normalized()
+	current_rotation = get_quaternion()
 	
 	if input_dir:
 		$Mesh.rotation.y = lerp_angle($Mesh.rotation.y, h_rot, delta * 5)
 		
-	if is_on_floor() and Input.is_action_just_pressed("sprint"):
+	if is_on_floor() and Input.is_action_pressed("sprint"):
 		if actions.sprinting == false:
+#			playback.travel("Run")
 			actions.sprinting = true
-			stats.speed = 10
-		elif actions.sprinting == true:
+			
+	if Input.is_action_just_released("sprint") and actions.sprinting == true:
+#			playback.travel("Move")
 			actions.sprinting = false 
-			stats.speed = 2
 	
 	if Input.is_action_pressed("aim"):
 		actions.aiming = true
@@ -58,12 +79,11 @@ func _physics_process(delta: float) -> void:
 		actions.aiming = false
 		camera_3d.fov = 75
 	
-	if direction:
-		velocity.x = direction.x * stats.speed
-		velocity.z = direction.z * stats.speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, stats.speed)
-		velocity.z = move_toward(velocity.z, 0, stats.speed)
+	if Input.is_action_just_pressed("equip"):
+		animation_tree.set("parameters/EquipBow/active", true)
 	
-	velocity = velocity.rotated(Vector3.UP, $Mesh.rotation.y)
+	if is_on_floor():
+		velocity = rot * current_rotation * animation_tree.get_root_motion_position() / delta
+		velocity = -velocity.rotated(Vector3.UP, $Mesh.rotation.y)
+		
 	move_and_slide()

@@ -3,20 +3,19 @@
 [ext_resource type="PackedScene" uid="uid://dbdfl0viw8l73" path="res://Levels/test_level.tscn" id="1_07hdj"]
 [ext_resource type="PackedScene" uid="uid://dw7amgv3ynn2c" path="res://Player/player.tscn" id="2_g122e"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_a6f74"]
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c1607"]
 
-[sub_resource type="Sky" id="Sky_7smjg"]
-sky_material = SubResource("PhysicalSkyMaterial_a6f74")
+[sub_resource type="Sky" id="Sky_b2suy"]
+sky_material = SubResource("PhysicalSkyMaterial_c1607")
 
 [sub_resource type="Environment" id="Environment_drcj8"]
 background_mode = 2
-sky = SubResource("Sky_7smjg")
+sky = SubResource("Sky_b2suy")
 tonemap_mode = 3
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
-volumetric_fog_length = 500.0
 
 [node name="World" type="Node3D"]
 

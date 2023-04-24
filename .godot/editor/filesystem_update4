@@ -1,11 +1,4 @@
+res://Levels/test_level.tscn
+res://Shaders/Water.gdshader
 res://Game/world.tscn
-res://Player/player.gd
-res://Components/StatsComponent.gd
-res://Components/stats_component.tscn
 res://Player/player.tscn
-res://Components/HealthComponent.gd
-res://Components/health_component.tscn
-res://Components/StateComponent.gd
-res://Animations/Jumping.res
-res://Animations/Walk.res
-res://Player/CameraOrbit.gd

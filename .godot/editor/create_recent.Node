@@ -1,3 +1,7 @@
+MeshInstance3D
+MultiMeshInstance3D
+GPUParticles3D
+PanelContainer
 AnimationTree
 RootMotionView
 Node3D
