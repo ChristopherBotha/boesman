@@ -10,3 +10,4 @@ class_name StatsComponent
 @export var level := 0
 @export var experience := 0
 
+

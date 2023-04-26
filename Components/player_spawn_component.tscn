@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxgs1muy76ym2"]
+
+[ext_resource type="Script" path="res://Components/PlayerSpawnComponent.gd" id="1_efkk3"]
+
+[node name="PlayerSpawnComponent" type="Node3D"]
+script = ExtResource("1_efkk3")
+player = "res://Player/player.tscn"

@@ -1,10 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbdfl0viw8l73"]
+[gd_scene load_steps=25 format=3 uid="uid://dbdfl0viw8l73"]
 
 [ext_resource type="Texture2D" uid="uid://bfvb3sq35w8iq" path="res://Textures/texture_08.png" id="1_hf36j"]
 [ext_resource type="PackedScene" uid="uid://jc86ncwi4tw5" path="res://Components/interaction_component.tscn" id="2_tlmiy"]
 [ext_resource type="PackedScene" uid="uid://byqwwru2h67fk" path="res://Components/dialogue_component.tscn" id="3_q2h31"]
 [ext_resource type="Resource" uid="uid://bn2wbfco7m621" path="res://dialogues/prisoner2.dialogue" id="4_md3i4"]
 [ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="5_xewdf"]
+[ext_resource type="PackedScene" uid="uid://bxgs1muy76ym2" path="res://Components/player_spawn_component.tscn" id="6_v5ql3"]
+[ext_resource type="ArrayMesh" uid="uid://daw5bbsibe3kr" path="res://Models/Hut.obj" id="7_omtb3"]
+[ext_resource type="ArrayMesh" uid="uid://dmmys8cvr8m8c" path="res://Models/Rock1.obj" id="8_1py7s"]
+[ext_resource type="ArrayMesh" uid="uid://dkpl0jm34jek0" path="res://Models/Fire.obj" id="9_wp18n"]
+[ext_resource type="PackedScene" uid="uid://cf71m8evcpysd" path="res://Particles/Fire.tscn" id="10_5nk5p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8evef"]
 albedo_texture = ExtResource("1_hf36j")
@@ -72,16 +77,19 @@ shader_parameter/foam_sampler = SubResource("NoiseTexture2D_io4ou")
 [sub_resource type="PlaneMesh" id="PlaneMesh_uk4gc"]
 size = Vector2(100, 100)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6ejq"]
+cull_mode = 2
+
 [node name="TestLevel" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51.8747, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -51.9673, 0)
 material_override = SubResource("StandardMaterial3D_8evef")
 use_collision = true
 size = Vector3(30, 100, 30)
 
 [node name="NPC" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94848, -0.928381, -6.73077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94848, -0.57537, -6.73077)
 
 [node name="InteractionComponent" parent="NPC" node_paths=PackedStringArray("dialogue_component") instance=ExtResource("2_tlmiy")]
 interact_collision_size = Vector3(3, 3, 3)
@@ -98,3 +106,45 @@ mesh = SubResource("CapsuleMesh_5ywrs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.59434, 0)
 material_override = SubResource("ShaderMaterial_nfjlo")
 mesh = SubResource("PlaneMesh_uk4gc")
+
+[node name="PlayerSpawnComponent" parent="." instance=ExtResource("6_v5ql3")]
+
+[node name="Foliage" type="Node3D" parent="."]
+
+[node name="Hut" type="MeshInstance3D" parent="Foliage"]
+transform = Transform3D(-0.761346, 0, 0.648346, 0, 1, 0, -0.648346, 0, -0.761346, -5.5898, -2.12345, 7.52724)
+material_override = SubResource("StandardMaterial3D_h6ejq")
+mesh = ExtResource("7_omtb3")
+skeleton = NodePath("../..")
+
+[node name="Rocks" type="Node3D" parent="Foliage"]
+
+[node name="Rock1" type="MeshInstance3D" parent="Foliage/Rocks"]
+transform = Transform3D(0.32021, 0.595268, 0.736968, -0.943524, 0.13058, 0.304485, 0.085017, -0.792846, 0.603462, -9.78378, -1.56537, 2.33788)
+mesh = ExtResource("8_1py7s")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Foliage/Rocks"]
+transform = Transform3D(-0.400667, -0.577324, -0.0587396, -0.609593, 0.23511, 0.33342, -0.375252, 0.23449, -0.47892, -2.85698, -1.82938, 10.9869)
+mesh = ExtResource("8_1py7s")
+skeleton = NodePath("../../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Foliage/Rocks"]
+transform = Transform3D(0.913143, -0.180339, -0.36558, 0.398676, 0.582128, 0.70865, 0.085017, -0.792846, 0.603462, -10.8315, -1.56537, 3.60373)
+mesh = ExtResource("8_1py7s")
+skeleton = NodePath("../../..")
+
+[node name="Fire3" type="Node3D" parent="Foliage"]
+
+[node name="Fire" type="MeshInstance3D" parent="Foliage/Fire3"]
+transform = Transform3D(0.499187, -0.0268225, 0.00965447, 0.0280737, 0.491963, -0.0847628, -0.00495218, 0.085167, 0.492668, -3.50161, -1.85089, 4.25107)
+mesh = ExtResource("9_wp18n")
+skeleton = NodePath("../..")
+
+[node name="Fire2" type="MeshInstance3D" parent="Foliage/Fire3"]
+transform = Transform3D(0.226714, -0.0458535, -0.191045, 0.0168442, 0.295177, -0.0508576, 0.195747, 0.0277072, 0.225644, -3.31031, -1.85089, 4.25565)
+mesh = ExtResource("9_wp18n")
+skeleton = NodePath("../..")
+
+[node name="Fire3" parent="Foliage/Fire3" instance=ExtResource("10_5nk5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33283, -1.47811, 4.27924)

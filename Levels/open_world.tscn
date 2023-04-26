@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcyp104727wri"]
+
+[ext_resource type="Shader" path="res://Levels/terrain.gdshader" id="1_ejvg3"]
+[ext_resource type="Texture2D" uid="uid://36funsqoaoy5" path="res://Levels/landscape_4k_displacement.png" id="2_p57op"]
+[ext_resource type="Script" path="res://Levels/Terrain.gd" id="3_c8gbc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2l887"]
+noise_type = 3
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_75loq"]
+noise = SubResource("FastNoiseLite_2l887")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gnmn"]
+render_priority = 0
+shader = ExtResource("1_ejvg3")
+shader_parameter/height_ratio = 1.0
+shader_parameter/heightmap = ExtResource("2_p57op")
+shader_parameter/_a = SubResource("NoiseTexture2D_75loq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xujig"]
+subdivide_width = 50
+subdivide_depth = 50
+
+[node name="OpenWorld" type="Node3D"]
+
+[node name="Terrain" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_0gnmn")
+mesh = SubResource("PlaneMesh_xujig")
+script = ExtResource("3_c8gbc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terrain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain/StaticBody3D"]

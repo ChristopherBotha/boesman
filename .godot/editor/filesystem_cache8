@@ -1,8 +1,8 @@
 b4bb536c7fbe646fec36344f2ea47b2f
-::res://::1682294900
+::res://::1682491284
 icon.svg::CompressedTexture2D::5287432249387247630::1682154358::1682167075::1::::<><>::
 README.md::TextFile::-1::1682166943::0::1::::<><>::
-::res://addons/::1682154488
+::res://addons/::1682329001
 ::res://addons/dialogue_manager/::1682154980
 constants.gd::GDScript::-1::1682154488::0::1::::<>Node<>::
 dialogue_label.gd::GDScript::-1::1682154488::0::1::::<>RichTextLabel<>::
@@ -50,7 +50,19 @@ main_view.gd::GDScript::-1::1682154488::0::1::::<>Control<>::
 main_view.tscn::PackedScene::4884668666408697448::1682154488::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u<>uid://dnufpcdrreva3<>uid://ctns6ouwwd68i<>uid://co8yl23idiwbi<>uid://gr8nakpbrhby<>uid://cs8pwrxr5vxix<>uid://cpg4lg1r3ff6m
 settings_view.gd::GDScript::-1::1682154488::0::1::::<>VBoxContainer<>::
 settings_view.tscn::PackedScene::5839841081119266502::1682154488::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
-::res://Animations/::1682232259
+::res://addons/wigglebone/::1682329001
+icon.svg::CompressedTexture2D::1161637783966111517::1682329001::1682329001::1::::<><>::
+plugin.cfg::TextFile::-1::1682329001::0::1::::<><>::
+plugin.gd::GDScript::-1::1682329001::0::1::::<>EditorPlugin<>::
+wiggle_bone.gd::GDScript::-1::1682329001::0::1::::WiggleBone<>BoneAttachment3D<>::
+wiggle_gizmo_plugin.gd::GDScript::-1::1682329001::0::1::::<>EditorNode3DGizmoPlugin<>::
+wiggle_properties.gd::GDScript::-1::1682329001::0::1::::WiggleProperties<>Resource<>::
+::res://addons/wiggly_appendage_2d/::1682328886
+plugin.cfg::TextFile::-1::1682328886::0::1::::<><>::
+wiggly_appendage_2d.gd::GDScript::-1::1682328886::0::1::::WigglyAppendage2D<>Line2D<>::
+wiggly_appendage_2d_icon.svg::CompressedTexture2D::6385188881881799430::1682328886::1682328886::1::::<><>::
+wiggly_appendage_2d_plugin.gd::GDScript::-1::1682328886::0::1::::<>EditorPlugin<>::
+::res://Animations/::1682457206
 Boesman.res::Animation::1238782232615953575::1682232259::0::1::::<><>::
 fall a land to run forward.res::Animation::5305083659690641901::1682232259::0::1::::<><>::
 fall a land to standing idle 01.res::Animation::1130396906773090415::1682232259::0::1::::<><>::
@@ -96,41 +108,62 @@ standing walk left.res::Animation::6403275235162963178::1682232259::0::1::::<><>
 standing walk right.res::Animation::2592608958838046946::1682232259::0::1::::<><>::
 unarmed idle 01.res::Animation::1315177349724999693::1682232259::0::1::::<><>::
 Walk.res::Animation::9045824058686824239::1682174362::0::1::::<><>::
+::res://Animations/New/::1682457256
+LeftStrafe.res::Animation::3303764579107582047::1682457256::0::1::::<><>::
+RightStrafe.res::Animation::6869095621163684971::1682457256::0::1::::<><>::
+Run.res::Animation::5445479325471659878::1682457256::0::1::::<><>::
+Walk.res::Animation::5310811927163061809::1682457256::0::1::::<><>::
 ::res://Art/::1682167075
 tile_0004.png::CompressedTexture2D::4585888922848836900::1682154747::1682167075::1::::<><>::
-::res://Components/::1682289213
+::res://Components/::1682489462
 DialogueComponent.gd::GDScript::-1::1682154375::0::1::::DialogueComponent<>Node3D<>::
 dialogue_component.tscn::PackedScene::4105358961408011772::1682157433::0::1::::<><>::res://Components/DialogueComponent.gd
-HealthComponent.gd::GDScript::-1::1682168724::0::1::::HealthComponent<>Node3D<>::
+HealthComponent.gd::GDScript::-1::1682488936::0::1::::HealthComponent<>Node3D<>::
 health_component.tscn::PackedScene::5312767361393543030::1682289213::0::1::::<><>::res://Components/HealthComponent.gd
 InteractionComponent.gd::GDScript::-1::1682156079::0::1::::Interaction<>Node3D<>::
 interaction_component.tscn::PackedScene::637888055527349374::1682157433::0::1::::<><>::res://Components/InteractionComponent.gd<>uid://cely2u6utgdpg<>uid://b6lo6kfnsbm01
-StateComponent.gd::GDScript::-1::1682169259::0::1::::StateComponent<>Node3D<>::
+PlayerSpawnComponent.gd::GDScript::-1::1682489462::0::1::::PlayerSpawnComponent<>Node3D<>::
+player_spawn_component.tscn::PackedScene::4014290352714277771::1682489462::0::1::::<><>::res://Components/PlayerSpawnComponent.gd
+StateComponent.gd::GDScript::-1::1682488889::0::1::::StateComponent<>Node3D<>::
 state_component.tscn::PackedScene::6311272116255402831::1682169033::0::1::::<><>::res://Components/StateComponent.gd
-StatsComponent.gd::GDScript::-1::1682167407::0::1::::StatsComponent<>Node3D<>::
+StatsComponent.gd::GDScript::-1::1682488936::0::1::::StatsComponent<>Node3D<>::
 stats_component.tscn::PackedScene::4673817641027171687::1682167407::0::1::::<><>::res://Components/StatsComponent.gd
 ::res://dialogues/::1682167076
 prisoner2.dialogue::Resource::3355951676367629772::1682154417::1682167076::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-::res://Game/::1682294836
-world.tscn::PackedScene::8657953812163583286::1682294836::0::1::::<><>::uid://dbdfl0viw8l73<>uid://dw7amgv3ynn2c
+::res://Game/::1682491714
+world.gd::GDScript::-1::1682489437::0::1::::<>Node3D<>::
+world.tscn::PackedScene::8657953812163583286::1682491714::0::1::::<><>::uid://dbdfl0viw8l73<>res://Game/world.gd
 ::res://Globals/::1682154617
 signal_bus.gd::GDScript::-1::1682154414::0::1::::<>Node<>::
 states.gd::GDScript::-1::1682154617::0::1::::<>Node<>::
-::res://Levels/::1682294837
-test_level.tscn::PackedScene::7235968602595141040::1682294837::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader
-::res://Player/::1682294837
-Boesman.gltf::PackedScene::5022399528424095403::1682283553::1682283555::1::::<><>::uid://cydewdtewhhko
+::res://Levels/::1682491714
+landscape_4k_displacement.png::CompressedTexture2D::2029623344438413926::1682350416::1682350448::1::::<><>::
+open_world.tscn::PackedScene::2577301981974004754::1682352501::0::1::::<><>::res://Levels/terrain.gdshader<>uid://36funsqoaoy5<>res://Levels/Terrain.gd
+Terrain.gd::GDScript::-1::1682351842::0::1::::<>MeshInstance3D<>::
+terrain.gdshader::Shader::-1::1682351665::0::1::::<><>::
+test_level.tscn::PackedScene::7235968602595141040::1682491714::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader<>uid://bxgs1muy76ym2<>uid://daw5bbsibe3kr<>uid://dmmys8cvr8m8c<>uid://dkpl0jm34jek0<>uid://cf71m8evcpysd
+::res://Models/::1682491717
+Feather.tscn::PackedScene::6629846302781741673::1682329253::0::1::::<><>::res://addons/wigglebone/wiggle_bone.gd<>res://addons/wigglebone/wiggle_properties.gd
+Fire.obj::Mesh::7892829178097685781::1682490284::1682490288::1::::<><>::
+Hut.obj::Mesh::7206501737940356357::1682492212::1682492214::1::::<><>::
+Modular Dungeon.glb::PackedScene::5854520654888495373::1682408533::1682408551::1::::<><>::
+Modular Dungeon.tscn::PackedScene::2662464796510115084::1682491717::0::1::::<><>::
+Rock1.obj::Mesh::8027791797239429580::1682334311::1682342356::1::::<><>::
+::res://Particles/::1682491717
+Fire.tscn::PackedScene::5191447485452270591::1682491717::0::1::::<><>::
+::res://Player/::1682491714
 Boesman_WhatsApp Image 2023-04-13 at 9.16.png::CompressedTexture2D::6463849090530891222::1682283554::1682283555::1::::<><>::
 CameraOrbit.gd::GDScript::-1::1682286880::0::1::::<>Node3D<>::
-Man.glb::PackedScene::7080016205231276025::1682283983::1682284011::1::::<><>::
-Man.gltf::PackedScene::6875598164927696989::1682283779::1682283793::1::::<><>::
-player.gd::GDScript::-1::1682289213::0::1::::Player<>CharacterBody3D<>::
-player.tscn::PackedScene::8769498477658571636::1682294837::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>res://Components/StatsComponent.gd<>uid://cv6hy2q2ndl0j
-::res://Shaders/::1682294837
-foliage_shader_G4alpha10.tres::Shader::5664899586070139840::1682294837::0::1::::<><>::
+Man.glb::PackedScene::2543477015580346694::1682327031::1682327077::1::::<><>::
+player.gd::GDScript::-1::1682457559::0::1::::Player<>CharacterBody3D<>::
+player.tscn::PackedScene::8769498477658571636::1682491714::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>res://Components/StatsComponent.gd<>uid://c44pabq3cf2fn<>uid://bncmrxbnwlimp<>uid://cv6hy2q2ndl0j
+strafeglb.glb::PackedScene::2728434885600020921::1682457138::1682457256::1::::<><>::
+test walk.glb::PackedScene::873041968290201790::1682434538::1682434546::1::::<><>::
+::res://Shaders/::1682297770
+foliage_shader_G4alpha10.tres::Shader::5664899586070139840::1682296192::0::1::::<><>::
 grass.gdshader::Shader::-1::1682294837::0::1::::<><>::
-Sky.gdshader::Shader::-1::1682292682::0::1::::<><>::
-Water.gdshader::Shader::-1::1682294837::0::1::::<><>::
+Sky.gdshader::Shader::-1::1682296192::0::1::::<><>::
+Water.gdshader::Shader::-1::1682297770::0::1::::<><>::
 ::res://Sounds/::1682167075
 Short - Ploppy Plop.wav::AudioStreamWAV::5077811420785094960::1682154713::1682167075::1::::<><>::
 ::res://Textures/::1682293663
