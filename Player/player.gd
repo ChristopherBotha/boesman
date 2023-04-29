@@ -7,9 +7,15 @@ class_name Player
 @export var healthComp : HealthComponent
 @export var stats : StatsComponent
 @export var actions : StateComponent
+@export var footLeft : FootComponent
+@export var footRight : FootComponent
 
 @onready var camera_3d: Camera3D = $CameraOrbit/h/v/SpringArm3D/Camera3D
 @onready var camera_orbit: Node3D = $CameraOrbit
+
+@onready var skeleton_3d: Skeleton3D = $Mesh/Armature/Skeleton3D
+@onready var head: BoneAttachment3D = $Mesh/Armature/Skeleton3D/head
+
 
 var JUMP_VELOCITY := 4.5
 var current_rotation : Quaternion 
@@ -27,7 +33,10 @@ func _ready()-> void:
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-
+	skeleton_3d.get_bone_pose(6)
+	
+	SignalBus.emit_signal("playerLocation", global_position)
+	
 	_handle_input(delta)
 	_button_inputs(delta)
 	move_and_slide()
@@ -40,12 +49,12 @@ func _handle_input(delta)-> void:
 	var h_rot = $CameraOrbit/h.global_transform.basis.get_euler().y
 	var cam_rot = $CameraOrbit/h.global_rotation_degrees.y
 	
-	print(healthComp.current_health)
-	
 	if cam_rot > prev_cam_rot:
-		print("left")
+#		print("left")
+		pass
 	elif cam_rot < prev_cam_rot:
-		print("right")
+#		print("right")
+		pass
 	
 	prev_cam_rot = cam_rot
 
@@ -87,9 +96,17 @@ func _button_inputs(delta)->void:
 	if Input.is_action_pressed("aim"):
 		actions.aiming = true
 		camera_3d.fov = 25
+		var tween = get_tree().create_tween()
+		tween.parallel().tween_property(camera_3d, "fov", 25, 0.1)
+		tween.parallel().tween_property(camera_3d, "h_offset", 0.5, 0.05)
+		tween.parallel().tween_property(camera_3d, "v_offset", 0.25, 0.05)
+
 	elif Input.is_action_just_released("aim"):
 		actions.aiming = false
-		camera_3d.fov = 75
+		var tween = get_tree().create_tween()
+		tween.parallel().tween_property(camera_3d, "fov", 75, 0.1)
+		tween.parallel().tween_property(camera_3d, "h_offset", 0, 0.05)
+		tween.parallel().tween_property(camera_3d, "v_offset", 0, 0.05)
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		healthComp.hurt(50)

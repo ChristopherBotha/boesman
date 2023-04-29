@@ -1,5 +1,5 @@
 b4bb536c7fbe646fec36344f2ea47b2f
-::res://::1682491284
+::res://::1682762459
 icon.svg::CompressedTexture2D::5287432249387247630::1682154358::1682167075::1::::<><>::
 README.md::TextFile::-1::1682166943::0::1::::<><>::
 ::res://addons/::1682329001
@@ -115,9 +115,13 @@ Run.res::Animation::5445479325471659878::1682457256::0::1::::<><>::
 Walk.res::Animation::5310811927163061809::1682457256::0::1::::<><>::
 ::res://Art/::1682167075
 tile_0004.png::CompressedTexture2D::4585888922848836900::1682154747::1682167075::1::::<><>::
-::res://Components/::1682489462
+::res://Components/::1682766104
 DialogueComponent.gd::GDScript::-1::1682154375::0::1::::DialogueComponent<>Node3D<>::
 dialogue_component.tscn::PackedScene::4105358961408011772::1682157433::0::1::::<><>::res://Components/DialogueComponent.gd
+EntityNavigationComponent.gd::GDScript::-1::1682763623::0::1::::EntityNavigationComponent<>Node3D<>::
+entity_navigation_component.tscn::PackedScene::8137333731525363825::1682766104::0::1::::<><>::res://Components/EntityNavigationComponent.gd
+FootComponent.gd::GDScript::-1::1682763398::0::1::::FootComponent<>Node3D<>::
+foot_component.tscn::PackedScene::8461791152347424463::1682766104::0::1::::<><>::res://Components/FootComponent.gd<>uid://cely2u6utgdpg
 HealthComponent.gd::GDScript::-1::1682488936::0::1::::HealthComponent<>Node3D<>::
 health_component.tscn::PackedScene::5312767361393543030::1682289213::0::1::::<><>::res://Components/HealthComponent.gd
 InteractionComponent.gd::GDScript::-1::1682156079::0::1::::Interaction<>Node3D<>::
@@ -130,41 +134,47 @@ StatsComponent.gd::GDScript::-1::1682488936::0::1::::StatsComponent<>Node3D<>::
 stats_component.tscn::PackedScene::4673817641027171687::1682167407::0::1::::<><>::res://Components/StatsComponent.gd
 ::res://dialogues/::1682167076
 prisoner2.dialogue::Resource::3355951676367629772::1682154417::1682167076::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-::res://Game/::1682491714
+::res://Enemies/::1682766104
+enemy.gd::GDScript::-1::1682766104::0::1::::<>CharacterBody3D<>::
+enemy.tscn::PackedScene::2533130642896140953::1682766104::0::1::::<><>::res://Enemies/enemy.gd
+Man.tscn::PackedScene::3970211719509432414::1682766104::0::1::::<><>::
+::res://Game/::1682766104
 world.gd::GDScript::-1::1682489437::0::1::::<>Node3D<>::
-world.tscn::PackedScene::8657953812163583286::1682491714::0::1::::<><>::uid://dbdfl0viw8l73<>res://Game/world.gd
-::res://Globals/::1682154617
+world.tscn::PackedScene::8657953812163583286::1682766104::0::1::::<><>::uid://dbdfl0viw8l73<>res://Game/world.gd
+::res://Globals/::1682760662
+Game.gd::GDScript::-1::1682759936::0::1::::<>Node<>::
 signal_bus.gd::GDScript::-1::1682154414::0::1::::<>Node<>::
-states.gd::GDScript::-1::1682154617::0::1::::<>Node<>::
-::res://Levels/::1682491714
+states.gd::GDScript::-1::1682760662::0::1::::<>Node<>::
+::res://Levels/::1682766104
 landscape_4k_displacement.png::CompressedTexture2D::2029623344438413926::1682350416::1682350448::1::::<><>::
 open_world.tscn::PackedScene::2577301981974004754::1682352501::0::1::::<><>::res://Levels/terrain.gdshader<>uid://36funsqoaoy5<>res://Levels/Terrain.gd
 Terrain.gd::GDScript::-1::1682351842::0::1::::<>MeshInstance3D<>::
 terrain.gdshader::Shader::-1::1682351665::0::1::::<><>::
-test_level.tscn::PackedScene::7235968602595141040::1682491714::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader<>uid://bxgs1muy76ym2<>uid://daw5bbsibe3kr<>uid://dmmys8cvr8m8c<>uid://dkpl0jm34jek0<>uid://cf71m8evcpysd
-::res://Models/::1682491717
+test_level.tscn::PackedScene::7235968602595141040::1682766104::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader<>uid://bxgs1muy76ym2<>uid://daw5bbsibe3kr<>uid://dmmys8cvr8m8c<>uid://dkpl0jm34jek0<>uid://cf71m8evcpysd<>uid://bcdcj6c14o1m0
+::res://Models/::1682672595
 Feather.tscn::PackedScene::6629846302781741673::1682329253::0::1::::<><>::res://addons/wigglebone/wiggle_bone.gd<>res://addons/wigglebone/wiggle_properties.gd
 Fire.obj::Mesh::7892829178097685781::1682490284::1682490288::1::::<><>::
 Hut.obj::Mesh::7206501737940356357::1682492212::1682492214::1::::<><>::
 Modular Dungeon.glb::PackedScene::5854520654888495373::1682408533::1682408551::1::::<><>::
-Modular Dungeon.tscn::PackedScene::2662464796510115084::1682491717::0::1::::<><>::
+Modular Dungeon.tscn::PackedScene::2662464796510115084::1682672595::0::1::::<><>::
 Rock1.obj::Mesh::8027791797239429580::1682334311::1682342356::1::::<><>::
-::res://Particles/::1682491717
-Fire.tscn::PackedScene::5191447485452270591::1682491717::0::1::::<><>::
-::res://Player/::1682491714
+::res://Particles/::1682766104
+Fire.tscn::PackedScene::5191447485452270591::1682766104::0::1::::<><>::
+::res://Player/::1682766104
 Boesman_WhatsApp Image 2023-04-13 at 9.16.png::CompressedTexture2D::6463849090530891222::1682283554::1682283555::1::::<><>::
-CameraOrbit.gd::GDScript::-1::1682286880::0::1::::<>Node3D<>::
+CameraOrbit.gd::GDScript::-1::1682505898::0::1::::<>Node3D<>::
 Man.glb::PackedScene::2543477015580346694::1682327031::1682327077::1::::<><>::
-player.gd::GDScript::-1::1682457559::0::1::::Player<>CharacterBody3D<>::
-player.tscn::PackedScene::8769498477658571636::1682491714::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>res://Components/StatsComponent.gd<>uid://c44pabq3cf2fn<>uid://bncmrxbnwlimp<>uid://cv6hy2q2ndl0j
+player.gd::GDScript::-1::1682763351::0::1::::Player<>CharacterBody3D<>::
+player.tscn::PackedScene::8769498477658571636::1682766104::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>uid://dss7p1m5td40b<>res://Components/StatsComponent.gd<>uid://c44pabq3cf2fn<>uid://bncmrxbnwlimp<>uid://cv6hy2q2ndl0j
 strafeglb.glb::PackedScene::2728434885600020921::1682457138::1682457256::1::::<><>::
 test walk.glb::PackedScene::873041968290201790::1682434538::1682434546::1::::<><>::
-::res://Shaders/::1682297770
+::res://Shaders/::1682496005
 foliage_shader_G4alpha10.tres::Shader::5664899586070139840::1682296192::0::1::::<><>::
 grass.gdshader::Shader::-1::1682294837::0::1::::<><>::
 Sky.gdshader::Shader::-1::1682296192::0::1::::<><>::
-Water.gdshader::Shader::-1::1682297770::0::1::::<><>::
-::res://Sounds/::1682167075
+Water.gdshader::Shader::-1::1682496005::0::1::::<><>::
+::res://Sounds/::1682766213
+Concrete 1.wav::AudioStreamWAV::9097580273453271596::1682766213::1682766214::1::::<><>::
 Short - Ploppy Plop.wav::AudioStreamWAV::5077811420785094960::1682154713::1682167075::1::::<><>::
 ::res://Textures/::1682293663
 g_a.png::CompressedTexture2D::7846752336108331838::1682293201::1682293663::1::::<><>::

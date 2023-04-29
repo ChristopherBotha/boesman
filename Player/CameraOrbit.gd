@@ -11,7 +11,7 @@ var h_acceleration = 1
 var v_acceleration = 1
 
 func _ready():
-#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	camera_3d.fov = fov
 	
 	

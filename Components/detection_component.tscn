@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwoysai6x4oxx"]
+
+[ext_resource type="Script" path="res://Components/detection_component.gd" id="1_l2dre"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22w2k"]
+
+[node name="DetectionComponent" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04977, 0)
+script = ExtResource("1_l2dre")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_22w2k")

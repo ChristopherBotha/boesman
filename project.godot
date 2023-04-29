@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SignalBus="*res://Globals/signal_bus.gd"
+Game="*res://Globals/Game.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg", "res://addons/wiggly_appendage_2d/plugin.cfg")
 
 [input]
 

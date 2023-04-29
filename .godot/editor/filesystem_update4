@@ -1,6 +1,16 @@
-res://Particles/Fire.tscn
-res://Game/world.tscn
+res://Enemies/enemy.tscn
+res://Components/FootComponent.gd
 res://Player/player.tscn
+res://Game/world.tscn
 res://Levels/test_level.tscn
-res://Models/Modular Dungeon.tscn
-res://Player/CameraOrbit.gd
+res://Particles/Fire.tscn
+res://Components/foot_component.tscn
+res://Components/entity_navigation_component.tscn
+res://Components/EntityNavigationComponent.gd
+res://Enemies/enemy.gd
+res://Player/player.gd
+res://Enemies/Man.tscn
+res://Globals/Game.gd
+res://Game/world.gd
+res://Components/detection_component.tscn
+res://Components/detection_component.gd
