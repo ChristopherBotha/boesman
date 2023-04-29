@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var detectComponent : DectectionComponent
+@export var healthComp : HealthComponent
 
 @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 @onready var playback = $Enemy/AnimationTree.get("parameters/playback")
@@ -12,18 +13,20 @@ var vel := Vector3.ZERO
 var reached : bool = false
 
 func _ready() -> void:
+	print(healthComp.current_health)
 	SignalBus.connect("playerLocation", set_target_loc)
 	
 func set_target_loc(val: Vector3):
 	navigation_agent.target_position = val
-	look_at(val,Vector3.UP)
+	if reached == false:
+		look_at(val,Vector3.UP)
 	
 func _physics_process(delta: float) -> void:
 	var rot : Quaternion = animation_tree.get_root_motion_rotation()
 	
 	if not is_on_floor():
 		velocity.y -= 20 * delta
-
+	
 	if is_on_floor() and reached == false:
 		current_rotation = get_quaternion()
 		

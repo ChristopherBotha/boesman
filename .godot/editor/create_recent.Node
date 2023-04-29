@@ -1,3 +1,9 @@
+Timer
+ProgressBar
+BoneAttachment3D
+MeshInstance3D
+StaticBody3D
+RigidBody3D
 Area3D
 CollisionShape3D
 RootMotionView
@@ -5,9 +11,7 @@ RayCast3D
 AnimationTree
 NavigationAgent3D
 CharacterBody3D
-MeshInstance3D
 NavigationRegion3D
-BoneAttachment3D
 GPUParticles3D
 AudioStreamPlayer3D
 Node3D
@@ -16,8 +20,6 @@ OmniLight3D
 SpotLight3D
 Camera3D
 CollisionPolygon3D
-StaticBody3D
-ProgressBar
 WiggleBone
 WigglyAppendage2D
 MultiMeshInstance3D
