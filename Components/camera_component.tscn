@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4dkftpb0g25q"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6vy8b"]
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="Camera3D" type="Camera3D"]
+attributes = SubResource("CameraAttributesPractical_6vy8b")
+h_offset = 0.3
+v_offset = 0.3

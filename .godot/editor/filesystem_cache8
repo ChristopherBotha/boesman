@@ -1,55 +1,127 @@
 b4bb536c7fbe646fec36344f2ea47b2f
-::res://::1682785442
+::res://::1682871639
+CHANGELOG.md::TextFile::-1::1682803079::0::1::::<><>::
 icon.svg::CompressedTexture2D::5287432249387247630::1682154358::1682167075::1::::<><>::
 README.md::TextFile::-1::1682166943::0::1::::<><>::
-::res://addons/::1682329001
-::res://addons/dialogue_manager/::1682154980
-constants.gd::GDScript::-1::1682154488::0::1::::<>Node<>::
-dialogue_label.gd::GDScript::-1::1682154488::0::1::::<>RichTextLabel<>::
-dialogue_label.tscn::PackedScene::5518490004210093266::1682154980::0::1::::<><>::res://addons/dialogue_manager/dialogue_label.gd
-dialogue_line.gd::GDScript::-1::1682154488::0::1::::DialogueLine<>RefCounted<>::
-dialogue_manager.gd::GDScript::-1::1682154488::0::1::::<>Node<>::
-dialogue_resource.gd::GDScript::-1::1682154488::0::1::::DialogueResource<>Resource<>res://addons/dialogue_manager/assets/icon.svg::
-dialogue_response.gd::GDScript::-1::1682154488::0::1::::DialogueResponse<>RefCounted<>::
-editor_translation_parser_plugin.gd::GDScript::-1::1682154488::0::1::::<>EditorTranslationParserPlugin<>::
-import_plugin.gd::GDScript::-1::1682154488::0::1::::<>EditorImportPlugin<>::
-plugin.cfg::TextFile::-1::1682154488::0::1::::<><>::
-plugin.gd::GDScript::-1::1682154488::0::1::::<>EditorPlugin<>::
-test_scene.gd::GDScript::-1::1682154488::0::1::::BaseDialogueTestScene<>Node2D<>::
-test_scene.tscn::PackedScene::7885336346204791191::1682154980::0::1::::<><>::res://addons/dialogue_manager/test_scene.gd
-::res://addons/dialogue_manager/assets/::1682167075
-icon.svg::CompressedTexture2D::9148339284877624195::1682154488::1682167075::1::::<><>::
-update.svg::CompressedTexture2D::9126631778427806641::1682154488::1682167075::1::::<><>::
-::res://addons/dialogue_manager/components/::1682154488
-code_edit.gd::GDScript::-1::1682154488::0::1::::<>CodeEdit<>::
-code_edit.tscn::PackedScene::5379618807048408118::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/code_edit.gd
-download_update_panel.gd::GDScript::-1::1682154488::0::1::::<>Control<>::
-download_update_panel.tscn::PackedScene::1130642722554629364::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/download_update_panel.gd<>uid://d3baj6rygkb3f
-errors_panel.gd::GDScript::-1::1682154488::0::1::::<>HBoxContainer<>::
-errors_panel.tscn::PackedScene::6105315990352960875::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/errors_panel.gd
-files_list.gd::GDScript::-1::1682154488::0::1::::<>VBoxContainer<>::
-files_list.tscn::PackedScene::8113335055803740416::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/files_list.gd
-parser.gd::GDScript::-1::1682154488::0::1::::DialogueManagerParser<>Object<>::
-parse_result.gd::GDScript::-1::1682154488::0::1::::DialogueManagerParseResult<>RefCounted<>::
-search_and_replace.gd::GDScript::-1::1682154488::0::1::::<>VBoxContainer<>::
-search_and_replace.tscn::PackedScene::458254375860855630::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/search_and_replace.gd
-settings.gd::GDScript::-1::1682154488::0::1::::<>Node<>::
-title_list.gd::GDScript::-1::1682154488::0::1::::<>VBoxContainer<>::
-title_list.tscn::PackedScene::6134415340044566558::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/title_list.gd
-update_button.gd::GDScript::-1::1682154488::0::1::::<>Button<>::
-update_button.tscn::PackedScene::5825087957514786930::1682154488::0::1::::<><>::res://addons/dialogue_manager/components/update_button.gd<>uid://qdxrxv3c3hxk
-::res://addons/dialogue_manager/example_balloon/::1682154997
-example_balloon.gd::GDScript::-1::1682154488::0::1::::<>CanvasLayer<>::
-example_balloon.tscn::PackedScene::2304415056852043862::1682154488::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo
-small_example_balloon.tscn::PackedScene::4417311113468315280::1682154997::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo
-::res://addons/dialogue_manager/l10n/::1682154488
-en.mo::Translation::-1::1682154488::0::1::::<><>::
-en.po::Translation::-1::1682154488::0::1::::<><>::
-::res://addons/dialogue_manager/views/::1682154488
-main_view.gd::GDScript::-1::1682154488::0::1::::<>Control<>::
-main_view.tscn::PackedScene::4884668666408697448::1682154488::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u<>uid://dnufpcdrreva3<>uid://ctns6ouwwd68i<>uid://co8yl23idiwbi<>uid://gr8nakpbrhby<>uid://cs8pwrxr5vxix<>uid://cpg4lg1r3ff6m
-settings_view.gd::GDScript::-1::1682154488::0::1::::<>VBoxContainer<>::
-settings_view.tscn::PackedScene::5839841081119266502::1682154488::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
+::res://addons/::1682803079
+::res://addons/dialogue_manager/::1682844010
+constants.gd::GDScript::-1::1682844010::0::1::::<>Node<>::
+dialogue_label.gd::GDScript::-1::1682844010::0::1::::<>RichTextLabel<>::
+dialogue_label.tscn::PackedScene::5518490004210093266::1682844010::0::1::::<><>::res://addons/dialogue_manager/dialogue_label.gd
+dialogue_line.gd::GDScript::-1::1682844010::0::1::::DialogueLine<>RefCounted<>::
+dialogue_manager.gd::GDScript::-1::1682844010::0::1::::<>Node<>::
+dialogue_resource.gd::GDScript::-1::1682844010::0::1::::DialogueResource<>Resource<>res://addons/dialogue_manager/assets/icon.svg::
+dialogue_response.gd::GDScript::-1::1682844010::0::1::::DialogueResponse<>RefCounted<>::
+editor_translation_parser_plugin.gd::GDScript::-1::1682844010::0::1::::<>EditorTranslationParserPlugin<>::
+import_plugin.gd::GDScript::-1::1682844010::0::1::::<>EditorImportPlugin<>::
+plugin.cfg::TextFile::-1::1682844010::0::1::::<><>::
+plugin.gd::GDScript::-1::1682844010::0::1::::<>EditorPlugin<>::
+test_scene.gd::GDScript::-1::1682844010::0::1::::BaseDialogueTestScene<>Node2D<>::
+test_scene.tscn::PackedScene::-1::1682844010::0::1::::<><>::res://addons/dialogue_manager/test_scene.gd
+::res://addons/dialogue_manager/assets/::1682844010
+icon.svg::CompressedTexture2D::9148339284877624195::1682844010::1682844010::1::::<><>::
+update.svg::CompressedTexture2D::9126631778427806641::1682844010::1682844010::1::::<><>::
+::res://addons/dialogue_manager/components/::1682844010
+code_edit.gd::GDScript::-1::1682844010::0::1::::<>CodeEdit<>::
+code_edit.tscn::PackedScene::5379618807048408118::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/code_edit.gd
+download_update_panel.gd::GDScript::-1::1682844010::0::1::::<>Control<>::
+download_update_panel.tscn::PackedScene::1130642722554629364::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/download_update_panel.gd<>uid://d3baj6rygkb3f
+errors_panel.gd::GDScript::-1::1682844010::0::1::::<>HBoxContainer<>::
+errors_panel.tscn::PackedScene::6105315990352960875::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/errors_panel.gd
+files_list.gd::GDScript::-1::1682844010::0::1::::<>VBoxContainer<>::
+files_list.tscn::PackedScene::8113335055803740416::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/files_list.gd
+parser.gd::GDScript::-1::1682844010::0::1::::DialogueManagerParser<>Object<>::
+parse_result.gd::GDScript::-1::1682844010::0::1::::DialogueManagerParseResult<>RefCounted<>::
+search_and_replace.gd::GDScript::-1::1682844010::0::1::::<>VBoxContainer<>::
+search_and_replace.tscn::PackedScene::458254375860855630::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/search_and_replace.gd
+settings.gd::GDScript::-1::1682844010::0::1::::<>Node<>::
+title_list.gd::GDScript::-1::1682844010::0::1::::<>VBoxContainer<>::
+title_list.tscn::PackedScene::6134415340044566558::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/title_list.gd
+update_button.gd::GDScript::-1::1682844010::0::1::::<>Button<>::
+update_button.tscn::PackedScene::5825087957514786930::1682844010::0::1::::<><>::res://addons/dialogue_manager/components/update_button.gd<>uid://qdxrxv3c3hxk
+::res://addons/dialogue_manager/example_balloon/::1682844010
+example_balloon.gd::GDScript::-1::1682844010::0::1::::<>CanvasLayer<>::
+example_balloon.tscn::PackedScene::2304415056852043862::1682844010::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo
+small_example_balloon.tscn::PackedScene::4417311113468315280::1682844010::0::1::::<><>::res://addons/dialogue_manager/example_balloon/example_balloon.gd<>uid://ckvgyvclnwggo
+::res://addons/dialogue_manager/l10n/::1682844010
+en.mo::Translation::-1::1682844010::0::1::::<><>::
+en.po::Translation::-1::1682844010::0::1::::<><>::
+::res://addons/dialogue_manager/views/::1682844010
+main_view.gd::GDScript::-1::1682844010::0::1::::<>Control<>::
+main_view.tscn::PackedScene::4884668666408697448::1682844010::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u<>uid://dnufpcdrreva3<>uid://ctns6ouwwd68i<>uid://co8yl23idiwbi<>uid://gr8nakpbrhby<>uid://cs8pwrxr5vxix<>uid://cpg4lg1r3ff6m
+settings_view.gd::GDScript::-1::1682844010::0::1::::<>VBoxContainer<>::
+settings_view.tscn::PackedScene::5839841081119266502::1682844010::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
+::res://addons/godot_gameplay_systems/::1682803080
+plugin.cfg::TextFile::-1::1682803080::0::1::::<><>::
+plugin.gd::GDScript::-1::1682803080::0::1::::<>EditorPlugin<>::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/::1682803080
+plugin.gd::GDScript::-1::1682803080::0::1::::<>EditorPlugin<>::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/assets/::1682803081
+Ability.svg::CompressedTexture2D::6676137873671525844::1682803079::1682803081::1::::<><>::
+Ability@0.15x.png::CompressedTexture2D::1291288918532747350::1682803079::1682803081::1::::<><>::
+AbilityContainer.svg::CompressedTexture2D::8135418726952250270::1682803079::1682803081::1::::<><>::
+AbilityContainer@0.15x.png::CompressedTexture2D::5669723024640245897::1682803079::1682803081::1::::<><>::
+Attribute.svg::CompressedTexture2D::5892106818344744250::1682803079::1682803081::1::::<><>::
+Attribute@0.15x.png::CompressedTexture2D::849002915416629237::1682803079::1682803081::1::::<><>::
+AttributeEffect.svg::CompressedTexture2D::5647809143414043287::1682803079::1682803081::1::::<><>::
+AttributeEffect@0.15x.png::CompressedTexture2D::7725797197440087562::1682803079::1682803081::1::::<><>::
+AttributeTable.svg::CompressedTexture2D::4858271389833748673::1682803079::1682803081::1::::<><>::
+AttributeTable@0.15x.png::CompressedTexture2D::7825069073159677664::1682803079::1682803081::1::::<><>::
+GameplayAttributeMap.svg::CompressedTexture2D::8114696080255539689::1682803079::1682803081::1::::<><>::
+GameplayAttributeMap@0.15x.png::CompressedTexture2D::1940724907509475191::1682803079::1682803081::1::::<><>::
+GameplayEffect.svg::CompressedTexture2D::2818721888010043756::1682803079::1682803081::1::::<><>::
+GameplayEffect@0.15x.png::CompressedTexture2D::6171126585310288814::1682803079::1682803081::1::::<><>::
+TimedEffect.svg::CompressedTexture2D::4732649543438575333::1682803079::1682803081::1::::<><>::
+TimedEffect@0.15x.png::CompressedTexture2D::2464556838402091211::1682803080::1682803081::1::::<><>::
+TimedEffectOneShot.svg::CompressedTexture2D::3443656214595900586::1682803080::1682803081::1::::<><>::
+TimedEffectOneShot@0.15x.png::CompressedTexture2D::1130268081061641098::1682803080::1682803081::1::::<><>::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/debug/::1682803517
+abilities_debugger.gd::GDScript::-1::1682803080::0::1::::<>Control<>::
+abilities_debugger.tscn::PackedScene::6403463573279591946::1682803517::0::1::::<><>::res://addons/godot_gameplay_systems/attributes_and_abilities/debug/abilities_debugger.gd
+::res://addons/godot_gameplay_systems/attributes_and_abilities/inspector/::1682803080
+attribute_editor.gd::GDScript::-1::1682803080::0::1::::<>EditorProperty<>::
+attribute_effect_editor.gd::GDScript::-1::1682803080::0::1::::<>EditorProperty<>::
+gameplay_attribute_map_inspector_plugin.gd::GDScript::-1::1682803080::0::1::::<>EditorInspectorPlugin<>::
+gameplay_effect_inspector_plugin.gd::GDScript::-1::1682803080::0::1::::<>EditorInspectorPlugin<>::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/inspector/components/::1682803080
+attribute_editor_row.gd::GDScript::-1::1682803080::0::1::::<>VBoxContainer<>::
+attribute_editor_row.tscn::PackedScene::-1::1682803080::0::1::::<><>::res://addons/godot_gameplay_systems/attributes_and_abilities/inspector/components/attribute_editor_row.gd
+attribute_effect_editor_row.gd::GDScript::-1::1682803080::0::1::::<>GridContainer<>::
+attribute_effect_editor_row.tscn::PackedScene::-1::1682803080::0::1::::<><>::res://addons/godot_gameplay_systems/attributes_and_abilities/inspector/components/attribute_effect_editor_row.gd<>uid://qdrl51ys1mv7<>uid://bbd35kb6frop4
+::res://addons/godot_gameplay_systems/attributes_and_abilities/nodes/::1682803080
+ability_container.gd::GDScript::-1::1682803080::0::1::::AbilityContainer<>Node<>::
+effected_area2d.gd::GDScript::-1::1682803080::0::1::::EffectedArea2D<>Area2D<>::
+effected_area3d.gd::GDScript::-1::1682803080::0::1::::EffectedArea3D<>Area3D<>::
+gameplay_attribute_map.gd::GDScript::-1::1682803080::0::1::::GameplayAttributeMap<>Node<>res://addons/godot_gameplay_systems/attributes_and_abilities/assets/GameplayAttributeMap.svg::
+gameplay_effect.gd::GDScript::-1::1682803080::0::1::::GameplayEffect<>Node<>res://addons/godot_gameplay_systems/assets/GameplayEffect.svg::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/objects/::1682803080
+activation_event.gd::GDScript::-1::1682803080::0::1::::ActivationEvent<>RefCounted<>::
+attribute_spec.gd::GDScript::-1::1682803080::0::1::::AttributeSpec<>RefCounted<>::
+::res://addons/godot_gameplay_systems/attributes_and_abilities/resources/::1682803080
+ability.gd::GDScript::-1::1682803080::0::1::::Ability<>Resource<>::
+attribute.gd::GDScript::-1::1682803080::0::1::::AttributeResource<>Resource<>::
+attribute_effect.gd::GDScript::-1::1682803080::0::1::::AttributeEffect<>Resource<>res://addons/godot_gameplay_systems/assets/AttributeEffect.svg::
+attribute_effect_condition.gd::GDScript::-1::1682803080::0::1::::AttributeEffectCondition<>Resource<>::
+attribute_table.gd::GDScript::-1::1682803080::0::1::::AttributeTable<>Resource<>res://addons/godot_gameplay_systems/assets/AttributeTable.svg::
+stop_effect_if_0.gd::GDScript::-1::1682803080::0::1::::StopEffectIf0<>AttributeEffectCondition<>::
+::res://addons/godot_gameplay_systems/inventory_system/::1682803080
+plugin.gd::GDScript::-1::1682803080::0::1::::<>EditorPlugin<>::
+::res://addons/godot_gameplay_systems/inventory_system/assets/::1682803081
+EquipmentIcon.png::CompressedTexture2D::8423437521474184849::1682803080::1682803081::1::::<><>::
+Equipped3DIcon.png::CompressedTexture2D::3264902584713546220::1682803080::1682803081::1::::<><>::
+InventoryIcon.png::CompressedTexture2D::6568509649441870044::1682803080::1682803081::1::::<><>::
+ItemIcon.png::CompressedTexture2D::8627648445623908343::1682803080::1682803081::1::::<><>::
+::res://addons/godot_gameplay_systems/inventory_system/nodes/::1682803080
+equipment.gd::GDScript::-1::1682803080::0::1::::Equipment<>Node<>res://addons/godot_gameplay_systems/inventory_system/assets/EquipmentIcon.png::
+equipped_item_3d.gd::GDScript::-1::1682803080::0::1::::EquippedItem3D<>Node3D<>::
+inventory.gd::GDScript::-1::1682803080::0::1::::Inventory<>Node<>res://addons/godot_gameplay_systems/inventory_system/assets/InventoryIcon.png::
+pickable_item_2d.gd::GDScript::-1::1682803080::0::1::::<>Area2D<>::
+pickable_item_3d.gd::GDScript::-1::1682803080::0::1::::<>Area3D<>::
+::res://addons/godot_gameplay_systems/inventory_system/objects/::1682803080
+item_activation_event.gd::GDScript::-1::1682803080::0::1::::ItemActivationEvent<>RefCounted<>::
+::res://addons/godot_gameplay_systems/inventory_system/resources/::1682803080
+equipment_slot.gd::GDScript::-1::1682803080::0::1::::EquipmentSlot<>Resource<>::
+item.gd::GDScript::-1::1682803080::0::1::::Item<>Resource<>res://addons/godot_gameplay_systems/inventory_system/assets/ItemIcon.png::
 ::res://addons/wigglebone/::1682329001
 icon.svg::CompressedTexture2D::1161637783966111517::1682329001::1682329001::1::::<><>::
 plugin.cfg::TextFile::-1::1682329001::0::1::::<><>::
@@ -62,114 +134,71 @@ plugin.cfg::TextFile::-1::1682328886::0::1::::<><>::
 wiggly_appendage_2d.gd::GDScript::-1::1682328886::0::1::::WigglyAppendage2D<>Line2D<>::
 wiggly_appendage_2d_icon.svg::CompressedTexture2D::6385188881881799430::1682328886::1682328886::1::::<><>::
 wiggly_appendage_2d_plugin.gd::GDScript::-1::1682328886::0::1::::<>EditorPlugin<>::
-::res://Animations/::1682457206
-Boesman.res::Animation::1238782232615953575::1682232259::0::1::::<><>::
-fall a land to run forward.res::Animation::5305083659690641901::1682232259::0::1::::<><>::
-fall a land to standing idle 01.res::Animation::1130396906773090415::1682232259::0::1::::<><>::
-fall a loop.res::Animation::7852508433596257881::1682232259::0::1::::<><>::
-Jumping.res::Animation::9217757337131101284::1682174265::0::1::::<><>::
-Sit.res::Animation::2885669290970228791::1682232259::0::1::::<><>::
-Sitting.res::Animation::5027519591289050794::1682232259::0::1::::<><>::
-Standing Aim Idle 01.res::Animation::1284657009373516284::1682232259::0::1::::<><>::
-standing aim overdraw.res::Animation::6893017501486057498::1682232259::0::1::::<><>::
-standing aim recoil.res::Animation::4442304916139557472::1682232259::0::1::::<><>::
-standing aim walk back.res::Animation::6652567590037961875::1682232259::0::1::::<><>::
-standing aim walk forward.res::Animation::7077390591452992924::1682232259::0::1::::<><>::
-standing aim walk left.res::Animation::2753588131461748934::1682232259::0::1::::<><>::
-standing aim walk right.res::Animation::4494910284940592817::1682232259::0::1::::<><>::
-standing block.res::Animation::793599054304280748::1682232259::0::1::::<><>::
-standing death backward 01.res::Animation::3187049798796456326::1682232259::0::1::::<><>::
-standing death forward 01.res::Animation::1097146636699925316::1682232259::0::1::::<><>::
-standing disarm bow.res::Animation::6351585615707931555::1682232259::0::1::::<><>::
-standing dive forward.res::Animation::2419992641061869316::1682232259::0::1::::<><>::
-standing dodge backward.res::Animation::2647383110357532572::1682232259::0::1::::<><>::
-standing dodge forward.res::Animation::8890574142572410689::1682232259::0::1::::<><>::
-standing dodge left.res::Animation::8451624431132958859::1682232259::0::1::::<><>::
-standing dodge right.res::Animation::4709262294595095124::1682232259::0::1::::<><>::
-standing draw arrow.res::Animation::2168877439369402462::1682232259::0::1::::<><>::
-standing equip bow.res::Animation::6990113839014735406::1682232259::0::1::::<><>::
-standing idle 01.res::Animation::2852323791259935290::1682232259::0::1::::<><>::
-standing idle 02 looking.res::Animation::4997325344396420439::1682232259::0::1::::<><>::
-standing idle 03 examine.res::Animation::2992146597295290847::1682232259::0::1::::<><>::
-standing melee kick.res::Animation::1284500750920954797::1682232259::0::1::::<><>::
-standing melee punch.res::Animation::2368678727231750345::1682232259::0::1::::<><>::
-standing react small from front.res::Animation::1021305987194436078::1682232259::0::1::::<><>::
-standing react small from headshot.res::Animation::820862421111747969::1682232259::0::1::::<><>::
-standing run back.res::Animation::3071578815921536181::1682232259::0::1::::<><>::
-standing run forward stop.res::Animation::4949939769183025972::1682232259::0::1::::<><>::
-standing run forward.res::Animation::8186020196345164195::1682232259::0::1::::<><>::
-standing run left.res::Animation::1271320893824895258::1682232259::0::1::::<><>::
-standing run right.res::Animation::4368449520628508768::1682232259::0::1::::<><>::
-standing turn 90 left.res::Animation::5153595582313755982::1682232259::0::1::::<><>::
-standing turn 90 right.res::Animation::3761626083469028311::1682232259::0::1::::<><>::
-standing walk back.res::Animation::7863320554580043827::1682232259::0::1::::<><>::
-standing walk forward.res::Animation::3378386257178651982::1682232259::0::1::::<><>::
-standing walk left.res::Animation::6403275235162963178::1682232259::0::1::::<><>::
-standing walk right.res::Animation::2592608958838046946::1682232259::0::1::::<><>::
-unarmed idle 01.res::Animation::1315177349724999693::1682232259::0::1::::<><>::
-Walk.res::Animation::9045824058686824239::1682174362::0::1::::<><>::
-::res://Animations/New/::1682457256
-LeftStrafe.res::Animation::3303764579107582047::1682457256::0::1::::<><>::
-RightStrafe.res::Animation::6869095621163684971::1682457256::0::1::::<><>::
-Run.res::Animation::5445479325471659878::1682457256::0::1::::<><>::
-Walk.res::Animation::5310811927163061809::1682457256::0::1::::<><>::
+::res://Animations/::1682852541
 ::res://Art/::1682167075
 tile_0004.png::CompressedTexture2D::4585888922848836900::1682154747::1682167075::1::::<><>::
-::res://Components/::1682790446
+::res://Components/::1682857230
+camera_component.gd::GDScript::-1::1682857214::0::1::::CameraComponent<>Camera3D<>::
+camera_component.tscn::PackedScene::9201548769936441624::1682857230::0::1::::<><>::
+camera_data_component.gd::GDScript::-1::1682857076::0::1::::CameraDataComponent<>Resource<>::
+camera_data_component.tscn::PackedScene::6607594371112746429::1682857230::0::1::::<><>::res://Components/camera_data_component.gd
 detection_component.gd::GDScript::-1::1682771507::0::1::::DectectionComponent<>Area3D<>::
-detection_component.tscn::PackedScene::8733807265588361749::1682790446::0::1::::<><>::res://Components/detection_component.gd
+detection_component.tscn::PackedScene::8733807265588361749::1682801772::0::1::::<><>::res://Components/detection_component.gd
 DialogueComponent.gd::GDScript::-1::1682154375::0::1::::DialogueComponent<>Node3D<>::
 dialogue_component.tscn::PackedScene::4105358961408011772::1682157433::0::1::::<><>::res://Components/DialogueComponent.gd
 EntityNavigationComponent.gd::GDScript::-1::1682768789::0::1::::EntityNavigationComponent<>Node3D<>::
 entity_navigation_component.tscn::PackedScene::8137333731525363825::1682768789::0::1::::<><>::res://Components/EntityNavigationComponent.gd
-FootComponent.gd::GDScript::-1::1682785396::0::1::::FootComponent<>Node3D<>::
+FootComponent.gd::GDScript::-1::1682844392::0::1::::FootComponent<>Node3D<>::
 foot_component.tscn::PackedScene::8461791152347424463::1682768825::0::1::::<><>::res://Components/FootComponent.gd<>uid://d2u622r7gp6ay
 HealthComponent.gd::GDScript::-1::1682788819::0::1::::HealthComponent<>Node3D<>::
-health_component.tscn::PackedScene::5312767361393543030::1682790446::0::1::::<><>::res://Components/HealthComponent.gd
+health_component.tscn::PackedScene::5312767361393543030::1682801772::0::1::::<><>::res://Components/HealthComponent.gd
 InteractionComponent.gd::GDScript::-1::1682156079::0::1::::Interaction<>Node3D<>::
 interaction_component.tscn::PackedScene::637888055527349374::1682157433::0::1::::<><>::res://Components/InteractionComponent.gd<>uid://cely2u6utgdpg<>uid://b6lo6kfnsbm01
 PlayerSpawnComponent.gd::GDScript::-1::1682489462::0::1::::PlayerSpawnComponent<>Node3D<>::
 player_spawn_component.tscn::PackedScene::4014290352714277771::1682489462::0::1::::<><>::res://Components/PlayerSpawnComponent.gd
 ProgressBarComponent.gd::GDScript::-1::1682788972::0::1::::ProgressBarComponent<>ProgressBar<>::
-progress_bar_component.tscn::PackedScene::8124648977477244502::1682790446::0::1::::<><>::res://Components/ProgressBarComponent.gd
+progress_bar_component.tscn::PackedScene::8124648977477244502::1682801772::0::1::::<><>::res://Components/ProgressBarComponent.gd
 StateComponent.gd::GDScript::-1::1682488889::0::1::::StateComponent<>Node3D<>::
 state_component.tscn::PackedScene::6311272116255402831::1682169033::0::1::::<><>::res://Components/StateComponent.gd
 StatsComponent.gd::GDScript::-1::1682488936::0::1::::StatsComponent<>Node3D<>::
 stats_component.tscn::PackedScene::4673817641027171687::1682167407::0::1::::<><>::res://Components/StatsComponent.gd
-::res://dialogues/::1682167076
+::res://dialogues/::1682845084
+prisoner1.dialogue::Resource::7910624519753999144::1682845084::1682845084::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 prisoner2.dialogue::Resource::3355951676367629772::1682154417::1682167076::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-::res://Enemies/::1682790446
-enemy.gd::GDScript::-1::1682788621::0::1::::<>CharacterBody3D<>::
-enemy.tscn::PackedScene::2533130642896140953::1682790446::0::1::::<><>::res://Enemies/enemy.gd<>uid://dwoysai6x4oxx<>uid://chxsrct6s1bko
+::res://Enemies/::1682857230
+enemy.gd::GDScript::-1::1682843404::0::1::::<>CharacterBody3D<>::
+enemy.tscn::PackedScene::2533130642896140953::1682857230::0::1::::<><>::res://Enemies/enemy.gd<>uid://dwoysai6x4oxx<>uid://chxsrct6s1bko
 Man.tscn::PackedScene::3970211719509432414::1682766318::0::1::::<><>::
-::res://Game/::1682790446
+::res://Game/::1682857229
 world.gd::GDScript::-1::1682766867::0::1::::<>Node3D<>::
-world.tscn::PackedScene::8657953812163583286::1682790446::0::1::::<><>::uid://dbdfl0viw8l73<>res://Game/world.gd
+world.tscn::PackedScene::8657953812163583286::1682857229::0::1::::<><>::uid://dbdfl0viw8l73<>res://Game/world.gd
 ::res://Globals/::1682768910
 Game.gd::GDScript::-1::1682768910::0::1::::<>Node<>::
 signal_bus.gd::GDScript::-1::1682154414::0::1::::<>Node<>::
 states.gd::GDScript::-1::1682760662::0::1::::<>Node<>::
-::res://Levels/::1682790446
+::res://Levels/::1682857229
 landscape_4k_displacement.png::CompressedTexture2D::2029623344438413926::1682350416::1682350448::1::::<><>::
 open_world.tscn::PackedScene::2577301981974004754::1682352501::0::1::::<><>::res://Levels/terrain.gdshader<>uid://36funsqoaoy5<>res://Levels/Terrain.gd
 Terrain.gd::GDScript::-1::1682351842::0::1::::<>MeshInstance3D<>::
 terrain.gdshader::Shader::-1::1682351665::0::1::::<><>::
-test_level.tscn::PackedScene::7235968602595141040::1682790446::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader<>uid://bxgs1muy76ym2<>uid://daw5bbsibe3kr<>uid://dmmys8cvr8m8c<>uid://dkpl0jm34jek0<>uid://cf71m8evcpysd<>uid://bcdcj6c14o1m0
-::res://Models/::1682672595
+test_level.tscn::PackedScene::7235968602595141040::1682857229::0::1::::<><>::uid://bfvb3sq35w8iq<>uid://jc86ncwi4tw5<>uid://byqwwru2h67fk<>uid://bn2wbfco7m621<>res://Shaders/Water.gdshader<>uid://bxgs1muy76ym2<>uid://daw5bbsibe3kr<>uid://dmmys8cvr8m8c<>uid://dkpl0jm34jek0<>uid://cf71m8evcpysd<>uid://bcdcj6c14o1m0<>uid://dkx73htuwhnme
+::res://Models/::1682844241
 Feather.tscn::PackedScene::6629846302781741673::1682329253::0::1::::<><>::res://addons/wigglebone/wiggle_bone.gd<>res://addons/wigglebone/wiggle_properties.gd
 Fire.obj::Mesh::7892829178097685781::1682490284::1682490288::1::::<><>::
+fireParticle.obj::Mesh::2944132666107585531::1682844239::1682844241::1::::<><>::
 Hut.obj::Mesh::7206501737940356357::1682492212::1682492214::1::::<><>::
 Modular Dungeon.glb::PackedScene::5854520654888495373::1682408533::1682408551::1::::<><>::
 Modular Dungeon.tscn::PackedScene::2662464796510115084::1682672595::0::1::::<><>::
 Rock1.obj::Mesh::8027791797239429580::1682334311::1682342356::1::::<><>::
-::res://Particles/::1682790446
-Fire.tscn::PackedScene::5191447485452270591::1682790446::0::1::::<><>::
-::res://Player/::1682790617
+::res://Particles/::1682857229
+Fire.tscn::PackedScene::5191447485452270591::1682857229::0::1::::<><>::
+::res://Player/::1682861730
 Boesman_WhatsApp Image 2023-04-13 at 9.16.png::CompressedTexture2D::6463849090530891222::1682283554::1682283555::1::::<><>::
+camera.gd::GDScript::-1::1682856855::0::1::::<>Camera3D<>::
 CameraOrbit.gd::GDScript::-1::1682774492::0::1::::<>Node3D<>::
-Man.glb::PackedScene::2543477015580346694::1682791945::1682791947::1::::<><>::
-player.gd::GDScript::-1::1682788361::0::1::::Player<>CharacterBody3D<>::
-player.tscn::PackedScene::8769498477658571636::1682790617::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>uid://dss7p1m5td40b<>res://Components/StatsComponent.gd<>uid://c44pabq3cf2fn<>uid://bncmrxbnwlimp<>uid://cv6hy2q2ndl0j<>uid://dn0v1ttkj2uty
+Man.glb::PackedScene::2543477015580346694::1682791945::1682792020::1::::<><>::
+player.gd::GDScript::-1::1682856230::0::1::::Player<>CharacterBody3D<>::
+player.tscn::PackedScene::4578547203449643666::1682861730::0::1::::<><>::res://Player/player.gd<>res://Player/CameraOrbit.gd<>uid://chxsrct6s1bko<>uid://d4dkftpb0g25q<>res://Components/camera_data_component.gd<>res://Components/StatsComponent.gd<>res://Components/camera_component.gd<>uid://cv6hy2q2ndl0j<>uid://dn0v1ttkj2uty<>uid://cwsbqg7y6sl24
 strafeglb.glb::PackedScene::2728434885600020921::1682457138::1682457256::1::::<><>::
 test walk.glb::PackedScene::873041968290201790::1682434538::1682434546::1::::<><>::
 ::res://Shaders/::1682496005
@@ -180,7 +209,15 @@ Water.gdshader::Shader::-1::1682496005::0::1::::<><>::
 ::res://Sounds/::1682766214
 Concrete 1.wav::AudioStreamWAV::9097580273453271596::1682766213::1682766214::1::::<><>::
 Short - Ploppy Plop.wav::AudioStreamWAV::5077811420785094960::1682154713::1682167075::1::::<><>::
-::res://Textures/::1682293663
+::res://Textures/::1682803468
+crosshair005.png::CompressedTexture2D::660539744592075324::1682803468::1682803468::1::::<><>::
+crosshair006.png::CompressedTexture2D::1140628653897547023::1682803468::1682803468::1::::<><>::
+crosshair008.png::CompressedTexture2D::8794683595585013077::1682803468::1682803468::1::::<><>::
+crosshair019.png::CompressedTexture2D::6354244382397675231::1682803468::1682803468::1::::<><>::
+crosshair020.png::CompressedTexture2D::5305638955717703625::1682803468::1682803468::1::::<><>::
+crosshair021.png::CompressedTexture2D::4335024202871899329::1682803468::1682803468::1::::<><>::
+crosshair070.png::CompressedTexture2D::3267054384423025931::1682803468::1682803468::1::::<><>::
+crosshair152.png::CompressedTexture2D::1246605275228083350::1682803468::1682803468::1::::<><>::
 g_a.png::CompressedTexture2D::7846752336108331838::1682293201::1682293663::1::::<><>::
 g_n.png::CompressedTexture2D::6249364543191694686::1682293201::1682293656::1::::<><>::
 texture_08.png::CompressedTexture2D::2780828525390980148::1682154561::1682167075::1::::<><>::

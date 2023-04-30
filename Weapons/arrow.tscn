@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx42uk3awormd"]
+
+[ext_resource type="Script" path="res://Weapons/Arrow.gd" id="1_crgfk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5qnw4"]
+size = Vector3(0.05, 0.05, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrlp8"]
+size = Vector3(0.05, 0.05, 1)
+
+[node name="Arrow" type="RigidBody3D"]
+collision_layer = 0
+gravity_scale = 0.0
+continuous_cd = true
+max_contacts_reported = 2
+contact_monitor = true
+freeze_mode = 1
+script = ExtResource("1_crgfk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_5qnw4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hrlp8")

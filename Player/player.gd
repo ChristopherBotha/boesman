@@ -3,6 +3,10 @@ class_name Player
 
 @onready var animation_tree: AnimationTree = $Mesh/AnimationTree
 @onready var playback = $Mesh/AnimationTree.get("parameters/playback")
+@onready var crosshair: TextureRect = $crosshair
+
+@onready var aim_cast: RayCast3D = $CameraOrbit/h/v/SpringArm3D/Camera3D/AimCast
+@export var arrow : PackedScene
 
 @export var healthComp : HealthComponent
 @export var stats : StatsComponent
@@ -14,7 +18,6 @@ class_name Player
 @onready var camera_orbit: Node3D = $CameraOrbit
 
 @onready var skeleton_3d: Skeleton3D = $Mesh/Armature/Skeleton3D
-@onready var head: BoneAttachment3D = $Mesh/Armature/Skeleton3D/head
 
 @onready var turn_left 
 @onready var turn_right 
@@ -32,10 +35,8 @@ var prev_cam_rot = 0.0
 
 func _ready()-> void:
 	print(healthComp.current_health)
-#	animation_tree.set("parameters/Move/blend_position", Vector2(current_dir.x,current_dir.z))
 	animation_tree.set("parameters/Transition/current_state", "Walk")
-	pass
-	
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	skeleton_3d.get_bone_pose(6)
@@ -46,6 +47,9 @@ func _physics_process(delta: float) -> void:
 	_button_inputs(delta)
 	move_and_slide()
 
+func _unhandled_input(event: InputEvent) -> void:
+	pass
+	
 func _handle_input(delta)-> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -54,14 +58,14 @@ func _handle_input(delta)-> void:
 	var h_rot = $CameraOrbit/h.global_transform.basis.get_euler().y
 	var cam_rot = $CameraOrbit/h.global_rotation_degrees.y
 	
-	if cam_rot > prev_cam_rot:
-#		print("left")
-		pass
-	elif cam_rot < prev_cam_rot:
-#		print("right")
-		pass
-	
-	prev_cam_rot = cam_rot
+#	if cam_rot > prev_cam_rot:
+##		print("left")
+#		pass
+#	elif cam_rot < prev_cam_rot:
+##		print("right")
+#		pass
+#
+#	prev_cam_rot = cam_rot
 
 
 	var input_dir = Vector3(Input.get_action_strength("left") - Input.get_action_strength("right"),0,
@@ -87,16 +91,18 @@ func _handle_input(delta)-> void:
 		## NOTE: The 0.5 prevents foot sliding form happening
 		velocity = rot * current_rotation * animation_tree.get_root_motion_position() / delta * 0.5
 		velocity = -velocity.rotated(Vector3.UP, $Mesh.rotation.y)
-		
+
 func _button_inputs(delta)->void:
 	
-	if is_on_floor() and Input.is_action_pressed("sprint"):
+	if is_on_floor() and Input.is_action_pressed("sprint") and actions.aiming == false:
 		if actions.sprinting == false:
 			$SprintTimer.start()
 			animation_tree.set("parameters/WR/transition_request", "Sprint")
 			actions.sprinting = true
+			var tween = get_tree().create_tween()
+			tween.parallel().tween_property(camera_3d, "fov", 85, 0.5)
 			
-	if Input.is_action_just_released("sprint") and actions.sprinting == true:
+	if Input.is_action_just_released("sprint") and actions.sprinting == true and actions.aiming == false:
 			$SprintTimer.stop()
 			animation_tree.set("parameters/WR/transition_request", "Walk")
 			actions.sprinting = false 
@@ -104,6 +110,7 @@ func _button_inputs(delta)->void:
 			tween.parallel().tween_property(animation_tree, "parameters/Lean/add_amount", 0, 0.05)
 			tween.parallel().tween_property(animation_tree, "parameters/Dash/scale", 1, 0.05)
 			tween.parallel().tween_property(animation_tree, "parameters/WalkScale/scale", 1, 0.05)
+			tween.parallel().tween_property(camera_3d, "fov", 75, 0.3)
 			
 	if camera_orbit.cam_v == deg_to_rad(-90) :
 		print("hi")
@@ -111,32 +118,40 @@ func _button_inputs(delta)->void:
 	elif camera_orbit.cam_v == deg_to_rad(90):
 		animation_tree.set("parameters/OneShot/active", true)
 
-	
+	if Input.is_action_just_pressed("shoot"):
+		var ar = arrow.instantiate()
+		$Mesh/Nozzle.add_child(ar)
+		ar.global_position = $Mesh/Nozzle.global_position
+		
 	if Input.is_action_pressed("aim"):
 		animation_tree.set("parameters/Aiming/transition_request", "Aim")
 		actions.aiming = true
 		camera_3d.fov = 25
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(camera_3d, "fov", 25, 0.1)
+		tween.parallel().tween_property(crosshair, "modulate", Color(1,1,1,1), 0.5)
 #		tween.parallel().tween_property(camera_3d, "h_offset", 0.5, 0.05)
 #		tween.parallel().tween_property(camera_3d, "v_offset", 0.25, 0.05)
 
 	elif Input.is_action_just_released("aim"):
-		animation_tree.set("parameters/Aiming/transition_request", "not_Aim")
 		
+		
+		animation_tree.set("parameters/Aiming/transition_request", "not_Aim")
 		actions.aiming = false
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(camera_3d, "fov", 75, 0.1)
+		tween.parallel().tween_property(crosshair, "modulate", Color(1,1,1,0),0.5)
 #		tween.parallel().tween_property(camera_3d, "h_offset", 0, 0.05)
 #		tween.parallel().tween_property(camera_3d, "v_offset", 0, 0.05)
-
 		
+		if aim_cast.is_colliding():
+			pass
+
+	
+	
 	if Input.is_action_just_pressed("equip"):
 		animation_tree.set("parameters/EquipBow/active", true)
 	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
 
 func _on_sprint_timer_timeout() -> void:
 	dashing = true
@@ -145,3 +160,4 @@ func _on_sprint_timer_timeout() -> void:
 	tween.parallel().tween_property(animation_tree, "parameters/Lean/add_amount", 1, 0.1)
 	tween.parallel().tween_property(animation_tree, "parameters/Dash/scale", 3, 0.1)
 	tween.parallel().tween_property(animation_tree, "parameters/WalkScale/scale", 3, 0.1)
+	tween.parallel().tween_property(camera_3d, "fov", 100, 0.5)

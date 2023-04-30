@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_w4umd"]
+
+[resource]
+script = ExtResource("1_w4umd")
+titles = {
+"start": "3"
+}
+character_names = PackedStringArray("Gamma", "Alpha")
+first_title = "3"
+lines = {
+"1": {
+"next_id": "3",
+"text": "start",
+"type": "title"
+},
+"10": {
+"character": "Gamma",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "11",
+"text": "[speed=0.3]I just wanted to say hello.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[speed=0.3]I just wanted to say hello.",
+"type": "dialogue"
+},
+"11": {
+"character": "Gamma",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "13",
+"text": "[speed=0.3]BIATCCCHHHHHHH!!!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[speed=0.3]BIATCCCHHHHHHH!!!!!",
+"type": "dialogue"
+},
+"13": {
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"3": {
+"character": "Gamma",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "5",
+"text": "[speed=0.3] Aweh Brah! Why were you running ?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[speed=0.3] Aweh Brah! Why were you running ?",
+"type": "dialogue"
+},
+"5": {
+"next_id": "6",
+"next_id_after": "10",
+"responses": PackedStringArray("5", "7"),
+"text": "Fear",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Fear",
+"type": "response"
+},
+"6": {
+"character": "Alpha",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "10",
+"parent_id": "5",
+"text": "[speed=0.3]I was scared, you one ugly MFR!!!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[speed=0.3]I was scared, you one ugly MFR!!!",
+"type": "dialogue"
+},
+"7": {
+"next_id": "8",
+"next_id_after": "10",
+"text": "Neutral",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Neutral",
+"type": "response"
+},
+"8": {
+"character": "Alpha",
+"character_replacements": Array[Dictionary]([]),
+"next_id": "10",
+"parent_id": "7",
+"text": "[speed=0.3]No, reason.[speed=0.3]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[speed=0.3]No, reason.[speed=0.3]",
+"type": "dialogue"
+}
+}
+metadata/dialogue_manager_version = "2.15.4"

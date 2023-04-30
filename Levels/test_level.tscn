@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dbdfl0viw8l73"]
+[gd_scene load_steps=26 format=3 uid="uid://dbdfl0viw8l73"]
 
 [ext_resource type="Texture2D" uid="uid://bfvb3sq35w8iq" path="res://Textures/texture_08.png" id="1_hf36j"]
 [ext_resource type="PackedScene" uid="uid://jc86ncwi4tw5" path="res://Components/interaction_component.tscn" id="2_tlmiy"]
@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dkpl0jm34jek0" path="res://Models/Fire.obj" id="9_wp18n"]
 [ext_resource type="PackedScene" uid="uid://cf71m8evcpysd" path="res://Particles/Fire.tscn" id="10_5nk5p"]
 [ext_resource type="PackedScene" uid="uid://bcdcj6c14o1m0" path="res://Enemies/enemy.tscn" id="11_tq86d"]
+[ext_resource type="Resource" uid="uid://dkx73htuwhnme" path="res://dialogues/prisoner1.dialogue" id="12_art71"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy788"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
@@ -136,7 +137,7 @@ mesh = ExtResource("9_wp18n")
 skeleton = NodePath("../..")
 
 [node name="Fire3" parent="Foliage/Fire3" instance=ExtResource("10_5nk5p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33283, -1.47811, 4.27924)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33283, -1.69491, 4.27924)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_xr5ie")
@@ -153,3 +154,9 @@ shape = SubResource("ConcavePolygonShape3D_6r2lb")
 
 [node name="Enemy" parent="." instance=ExtResource("11_tq86d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.78347, -10.6947)
+
+[node name="InteractionComponent" parent="Enemy" node_paths=PackedStringArray("dialogue_component") instance=ExtResource("2_tlmiy")]
+dialogue_component = NodePath("../DialogueComponent")
+
+[node name="DialogueComponent" parent="Enemy" instance=ExtResource("3_q2h31")]
+dialogue_resource = ExtResource("12_art71")

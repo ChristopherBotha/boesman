@@ -1,9 +1,11 @@
-res://Animations/New
+res://Weapons
 res://Components
+res://Player
+res://Player/
+res://dialogues
 res://Enemies
 res://Globals
 res://Particles
-res://Player
 res://Models
 res://Levels
 res://Shaders

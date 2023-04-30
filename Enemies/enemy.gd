@@ -34,8 +34,9 @@ func _physics_process(delta: float) -> void:
 		var current_agent_position: Vector3 = global_position
 		var new_velocity = (next_path_position - current_agent_position).normalized()
 		
+		#interpolates velocity for animation blending
 		vel = vel.lerp(new_velocity,0.05)
-		
+
 	animation_tree.set("parameters/Move/blend_position", vel.length())
 	
 	if is_on_floor():
