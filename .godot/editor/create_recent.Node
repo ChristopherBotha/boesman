@@ -1,9 +1,18 @@
+TextureProgressBar
+Label
+TextureRect
+Control
+Button
+VBoxContainer
+Container
+AspectRatioContainer
+MenuBar
+GridContainer
 Node3D
 CollisionShape3D
 MeshInstance3D
 RigidBody3D
 RayCast3D
-TextureRect
 Timer
 ProgressBar
 BoneAttachment3D
@@ -22,7 +31,3 @@ SpotLight3D
 Camera3D
 CollisionPolygon3D
 WiggleBone
-WigglyAppendage2D
-MultiMeshInstance3D
-PanelContainer
-StatsComponent

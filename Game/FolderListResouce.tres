@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FolderListResource" load_steps=2 format=3 uid="uid://bjk4urcut6mvr"]
+
+[ext_resource type="Script" path="res://Game/FolderListResources.gd" id="1_u3rrd"]
+
+[resource]
+script = ExtResource("1_u3rrd")
+FolderPath = "res://Levels"
+resource_type = "tscn"

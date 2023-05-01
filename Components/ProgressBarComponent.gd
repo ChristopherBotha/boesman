@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 class_name ProgressBarComponent
 
 func _ready() -> void:

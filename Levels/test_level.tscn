@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dbdfl0viw8l73"]
+[gd_scene load_steps=34 format=3 uid="uid://dbdfl0viw8l73"]
 
 [ext_resource type="Texture2D" uid="uid://bfvb3sq35w8iq" path="res://Textures/texture_08.png" id="1_hf36j"]
 [ext_resource type="PackedScene" uid="uid://jc86ncwi4tw5" path="res://Components/interaction_component.tscn" id="2_tlmiy"]
@@ -12,6 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://cf71m8evcpysd" path="res://Particles/Fire.tscn" id="10_5nk5p"]
 [ext_resource type="PackedScene" uid="uid://bcdcj6c14o1m0" path="res://Enemies/enemy.tscn" id="11_tq86d"]
 [ext_resource type="Resource" uid="uid://dkx73htuwhnme" path="res://dialogues/prisoner1.dialogue" id="12_art71"]
+[ext_resource type="PackedScene" uid="uid://dxqlfffm2u0wl" path="res://Models/Stone_big_004.fbx" id="13_bm323"]
+[ext_resource type="PackedScene" uid="uid://clj24hu07xypu" path="res://Models/Stone_big_006.fbx" id="14_j13jv"]
+[ext_resource type="PackedScene" uid="uid://cena1sbwy4c6i" path="res://Models/Stone_lit_009.fbx" id="15_12xie"]
+[ext_resource type="PackedScene" uid="uid://4qku5gnnltxa" path="res://Models/Stone_lit_010.fbx" id="16_iojqt"]
+[ext_resource type="PackedScene" uid="uid://ch58ud5toiplu" path="res://Models/Stone_mid_004.fbx" id="17_w7o6l"]
+[ext_resource type="PackedScene" uid="uid://do6xo03ace186" path="res://Models/Stone_mid_005.fbx" id="18_quxmk"]
+[ext_resource type="PackedScene" uid="uid://bfbewn8qboyr6" path="res://Models/Stone_mid_006.fbx" id="19_26hg0"]
+[ext_resource type="PackedScene" uid="uid://cfw2o6t82n6uv" path="res://Models/Stone_big_005.fbx" id="20_k1nh4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy788"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
@@ -160,3 +168,27 @@ dialogue_component = NodePath("../DialogueComponent")
 
 [node name="DialogueComponent" parent="Enemy" instance=ExtResource("3_q2h31")]
 dialogue_resource = ExtResource("12_art71")
+
+[node name="Stone_big_004" parent="." instance=ExtResource("13_bm323")]
+transform = Transform3D(1.46981, -3.15946e-08, -1.83073, 0.228109, 2.33788, 0.308462, 1.39207, -0.383094, 1.88243, 9.57236, -4.95572, 1.62219)
+
+[node name="Stone_big_006" parent="." instance=ExtResource("14_j13jv")]
+transform = Transform3D(0.946846, -0.257636, -0.192631, 0, 0.598814, -0.800888, 0.321687, 0.758318, 0.566985, 2.92409, -2.47527, 0.426898)
+
+[node name="Stone_lit_009" parent="." instance=ExtResource("15_12xie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89581, -1.9673, 3.2018)
+
+[node name="Stone_lit_010" parent="." instance=ExtResource("16_iojqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58943, -1.9673, 2.74227)
+
+[node name="Stone_mid_004" parent="." instance=ExtResource("17_w7o6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72412, -1.9673, 0.98417)
+
+[node name="Stone_mid_005" parent="." instance=ExtResource("18_quxmk")]
+transform = Transform3D(-0.747613, 0, -0.664135, 0, 1, 0, 0.664135, 0, -0.747613, 3.03706, -1.9673, 0.132252)
+
+[node name="Stone_mid_006" parent="." instance=ExtResource("19_26hg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.37221, -1.9673, 2.93185)
+
+[node name="Stone_big_005" parent="." instance=ExtResource("20_k1nh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.72015, -1.9673, 1.13341)

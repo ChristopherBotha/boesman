@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://frdohwnyrcj4"]
+
+[ext_resource type="Script" path="res://Components/ui_component.gd" id="1_upjbe"]
+[ext_resource type="Theme" uid="uid://bsyqi46djcvo8" path="res://Fonts/Theme.tres" id="2_cxqaa"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upjbe")
+
+[node name="Gamename" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -58.0
+offset_right = 324.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_cxqaa")
+theme_override_font_sizes/font_size = 100
+text = "Boesman
+"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -100.0
+offset_right = -56.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QUIT"

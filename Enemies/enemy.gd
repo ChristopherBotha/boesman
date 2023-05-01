@@ -13,7 +13,6 @@ var vel := Vector3.ZERO
 var reached : bool = false
 
 func _ready() -> void:
-	print(healthComp.current_health)
 	SignalBus.connect("playerLocation", set_target_loc)
 	
 func set_target_loc(val: Vector3):

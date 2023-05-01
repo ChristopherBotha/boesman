@@ -1,13 +1,15 @@
 extends Node3D
 class_name StateComponent
 
-@export var sprinting := false
-@export var jumping := false
-@export var aiming := false
-@export var falling := false
-@export var air := false
-@export var ground := false
+@onready var sprinting := false
+@onready var jumping := false
+@onready var aiming := false
+@onready var falling := false
+@onready var air := false
+@onready var ground := false
+@onready var juggle := false
 
-@export var attacking := false
-@export var hurt := false
-@export var dying := false
+@onready var attacking := false
+@onready var hurt := false
+@onready var dying := false
+

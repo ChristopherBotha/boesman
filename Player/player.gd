@@ -23,7 +23,6 @@ class_name Player
 @onready var turn_right 
 
 var dashing := false
-var JUMP_VELOCITY := 4.5
 var current_rotation : Quaternion 
 var current_dir := Vector3.ZERO
 var dir := Vector3.ZERO
@@ -34,7 +33,6 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var prev_cam_rot = 0.0
 
 func _ready()-> void:
-	print(healthComp.current_health)
 	animation_tree.set("parameters/Transition/current_state", "Walk")
 
 func _physics_process(delta: float) -> void:
@@ -42,14 +40,13 @@ func _physics_process(delta: float) -> void:
 	skeleton_3d.get_bone_pose(6)
 	
 	SignalBus.emit_signal("playerLocation", global_position)
-	print(velocity.length())
 	_handle_input(delta)
 	_button_inputs(delta)
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	pass
-	
+
 func _handle_input(delta)-> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -113,15 +110,15 @@ func _button_inputs(delta)->void:
 			tween.parallel().tween_property(camera_3d, "fov", 75, 0.3)
 			
 	if camera_orbit.cam_v == deg_to_rad(-90) :
-		print("hi")
 		animation_tree.set("parameters/OneShot/request", "Fire")
 	elif camera_orbit.cam_v == deg_to_rad(90):
 		animation_tree.set("parameters/OneShot/active", true)
 
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and stats.ammo_arrow > 0:
 		var ar = arrow.instantiate()
 		$Mesh/Nozzle.add_child(ar)
 		ar.global_position = $Mesh/Nozzle.global_position
+		stats.ammo_arrow -= 1
 		
 	if Input.is_action_pressed("aim"):
 		animation_tree.set("parameters/Aiming/transition_request", "Aim")
@@ -152,7 +149,6 @@ func _button_inputs(delta)->void:
 	if Input.is_action_just_pressed("equip"):
 		animation_tree.set("parameters/EquipBow/active", true)
 	
-
 func _on_sprint_timer_timeout() -> void:
 	dashing = true
 	

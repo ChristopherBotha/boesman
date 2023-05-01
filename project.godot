@@ -25,6 +25,10 @@ Game="*res://Globals/Game.gd"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg")
 
+[gui]
+
+theme/custom="res://Fonts/Theme.tres"
+
 [input]
 
 Interact={

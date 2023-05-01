@@ -16,7 +16,6 @@ func heal(healing) -> void:
 	current_health += healing
 
 func _ready()->void:
-	print(owner)
 	current_health = max_health
 	
 

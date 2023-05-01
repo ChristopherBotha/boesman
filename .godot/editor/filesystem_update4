@@ -1,12 +1,11 @@
+res://Components/progress_bar_component.tscn
 res://Player/player.tscn
 res://Game/world.tscn
 res://Levels/test_level.tscn
 res://Particles/Fire.tscn
 res://Enemies/enemy.tscn
-res://Components/camera_data_component.tscn
 res://Components/camera_component.tscn
-res://Components/camera_component.gd
-res://Player/player.gd
-res://Player/CameraOrbit.gd
 res://Weapons/arrow.tscn
-res://Weapons/Arrow.gd
+res://UI/MainMenu.tscn
+res://Components/ProgressBarComponent.gd
+res://Player/CameraOrbit.gd

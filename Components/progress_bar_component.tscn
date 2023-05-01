@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Components/ProgressBarComponent.gd" id="1_exdyq"]
 
-[node name="ProgressBarComponent" type="ProgressBar"]
+[node name="ProgressBarComponent" type="TextureProgressBar"]
 offset_right = 215.0
 offset_bottom = 27.0
 script = ExtResource("1_exdyq")
