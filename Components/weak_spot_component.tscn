@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dywytyoeuxb1x"]
+
+[ext_resource type="Script" path="res://Components/WeakSpotComponent.gd" id="1_jw4gn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyt8b"]
+
+[node name="WeakSpotComponent" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_jw4gn")
+detection_size = 1.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dyt8b")

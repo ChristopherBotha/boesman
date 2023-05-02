@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyn0yai0w5757"]
+
+[ext_resource type="Script" path="res://Weapons/spear.gd" id="1_tjaax"]
+[ext_resource type="PackedScene" uid="uid://ctefdeti76h4u" path="res://Models/Spear.glb" id="2_lhdse"]
+
+[sub_resource type="Curve" id="Curve_eodpa"]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), -13.0481, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11eiu"]
+size = Vector3(0.2, 0.255, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_viycj"]
+size = Vector3(0.15, 1.203, 0.15)
+
+[node name="Spear" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_tjaax")
+recall_curve = SubResource("Curve_eodpa")
+spin_speed = 20.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="HeadShape" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.00261229, -0.694435)
+shape = SubResource("BoxShape3D_11eiu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00424117, -0.999991, 0, 0.999991, 0.00424117, 0, 0.00637923, 0.0659304)
+shape = SubResource("BoxShape3D_viycj")
+
+[node name="Spear" parent="." instance=ExtResource("2_lhdse")]
+
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

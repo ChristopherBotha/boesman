@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_w4umd"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_j3hva"]
 
 [resource]
-script = ExtResource("1_w4umd")
+script = ExtResource("1_j3hva")
 titles = {
 "start": "3"
 }
@@ -19,18 +19,18 @@ lines = {
 "character": "Gamma",
 "character_replacements": Array[Dictionary]([]),
 "next_id": "11",
-"text": "[speed=0.3]I just wanted to say hello.",
+"text": "[speed=0.6]I just wanted to say hello.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "[speed=0.3]I just wanted to say hello.",
+"translation_key": "[speed=0.6]I just wanted to say hello.",
 "type": "dialogue"
 },
 "11": {
 "character": "Gamma",
 "character_replacements": Array[Dictionary]([]),
 "next_id": "13",
-"text": "[speed=0.3]BIATCCCHHHHHHH!!!!!",
+"text": "[speed=0.6]BIATCCCHHHHHHH!!!!!",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "[speed=0.3]BIATCCCHHHHHHH!!!!!",
+"translation_key": "[speed=0.6]BIATCCCHHHHHHH!!!!!",
 "type": "dialogue"
 },
 "13": {
@@ -42,9 +42,9 @@ lines = {
 "character": "Gamma",
 "character_replacements": Array[Dictionary]([]),
 "next_id": "5",
-"text": "[speed=0.3] Aweh Brah! Why were you running ?",
+"text": "[speed=0.6] Aweh Brah! Why were you running ?",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "[speed=0.3] Aweh Brah! Why were you running ?",
+"translation_key": "[speed=0.6] Aweh Brah! Why were you running ?",
 "type": "dialogue"
 },
 "5": {
@@ -61,9 +61,9 @@ lines = {
 "character_replacements": Array[Dictionary]([]),
 "next_id": "10",
 "parent_id": "5",
-"text": "[speed=0.3]I was scared, you one ugly MFR!!!",
+"text": "[speed=0.6]I was scared, you one ugly MFR!!!",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "[speed=0.3]I was scared, you one ugly MFR!!!",
+"translation_key": "[speed=0.6]I was scared, you one ugly MFR!!!",
 "type": "dialogue"
 },
 "7": {
@@ -79,9 +79,9 @@ lines = {
 "character_replacements": Array[Dictionary]([]),
 "next_id": "10",
 "parent_id": "7",
-"text": "[speed=0.3]No, reason.[speed=0.3]",
+"text": "[speed=0.6]No, reason.[speed=0.3]",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "[speed=0.3]No, reason.[speed=0.3]",
+"translation_key": "[speed=0.6]No, reason.[speed=0.3]",
 "type": "dialogue"
 }
 }

@@ -1,13 +1,13 @@
 ~ start
 
-Gamma: [speed=0.3] Aweh Brah! Why were you running ?
+Gamma: [speed=0.6] Aweh Brah! Why were you running ?
 
 - Fear
-	Alpha: [speed=0.3]I was scared, you one ugly MFR!!!
+	Alpha: [speed=0.6]I was scared, you one ugly MFR!!!
 - Neutral
-	Alpha: [speed=0.3]No, reason.[speed=0.3]
+	Alpha: [speed=0.6]No, reason.[speed=0.3]
 
-Gamma: [speed=0.3]I just wanted to say hello.
-Gamma: [speed=0.3]BIATCCCHHHHHHH!!!!!
+Gamma: [speed=0.6]I just wanted to say hello.
+Gamma: [speed=0.6]BIATCCCHHHHHHH!!!!!
 
 => END

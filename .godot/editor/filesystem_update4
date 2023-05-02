@@ -7,5 +7,13 @@ res://Enemies/enemy.tscn
 res://Components/camera_component.tscn
 res://Weapons/arrow.tscn
 res://UI/MainMenu.tscn
-res://Components/ProgressBarComponent.gd
-res://Player/CameraOrbit.gd
+res://Player/player.gd
+res://Weapons/spear.tscn
+res://Weapons/spear.gd
+res://Components/WeakSpotComponent.gd
+res://Components/weak_spot_component.tscn
+res://Enemies/enemy.gd
+res://Globals/Quests.gd
+res://Globals/quest.tscn
+res://Globals/quest_complete.tscn
+res://Globals/QuestCompleted.gd

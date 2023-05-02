@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8jtkpyrx1b2v"]
+
+[ext_resource type="Script" path="res://Globals/Quests.gd" id="1_1sybn"]
+
+[node name="Quest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1sybn")
+
+[node name="questName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.5
+offset_top = -19.0
+offset_right = 98.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Quest Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="questDescription" type="RichTextLabel" parent="questName"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.5
+offset_top = 25.0
+offset_right = 256.5
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Complete this task to get a nice reward"
+fit_content = true
+scroll_following = true

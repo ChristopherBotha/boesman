@@ -1,12 +1,15 @@
 extends CharacterBody3D
 class_name Player
 
+@export var arrow : PackedScene
+@export var spear : CharacterBody3D
+
 @onready var animation_tree: AnimationTree = $Mesh/AnimationTree
 @onready var playback = $Mesh/AnimationTree.get("parameters/playback")
 @onready var crosshair: TextureRect = $crosshair
 
 @onready var aim_cast: RayCast3D = $CameraOrbit/h/v/SpringArm3D/Camera3D/AimCast
-@export var arrow : PackedScene
+
 
 @export var healthComp : HealthComponent
 @export var stats : StatsComponent
@@ -38,14 +41,20 @@ func _ready()-> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	skeleton_3d.get_bone_pose(6)
-	
+	print(aim_cast.get_target_position())
 	SignalBus.emit_signal("playerLocation", global_position)
 	_handle_input(delta)
 	_button_inputs(delta)
 	move_and_slide()
 
-func _unhandled_input(event: InputEvent) -> void:
-	pass
+func _input(event):
+
+	if event is InputEventKey:
+		match event.keycode:
+			KEY_ESCAPE:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			KEY_TAB:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _handle_input(delta)-> void:
 	if not is_on_floor():
@@ -54,16 +63,6 @@ func _handle_input(delta)-> void:
 	var rot : Quaternion = animation_tree.get_root_motion_rotation()
 	var h_rot = $CameraOrbit/h.global_transform.basis.get_euler().y
 	var cam_rot = $CameraOrbit/h.global_rotation_degrees.y
-	
-#	if cam_rot > prev_cam_rot:
-##		print("left")
-#		pass
-#	elif cam_rot < prev_cam_rot:
-##		print("right")
-#		pass
-#
-#	prev_cam_rot = cam_rot
-
 
 	var input_dir = Vector3(Input.get_action_strength("left") - Input.get_action_strength("right"),0,
 			Input.get_action_strength("forward") - Input.get_action_strength("backward")).normalized()
@@ -115,10 +114,16 @@ func _button_inputs(delta)->void:
 		animation_tree.set("parameters/OneShot/active", true)
 
 	if Input.is_action_just_pressed("shoot") and stats.ammo_arrow > 0:
-		var ar = arrow.instantiate()
-		$Mesh/Nozzle.add_child(ar)
-		ar.global_position = $Mesh/Nozzle.global_position
-		stats.ammo_arrow -= 1
+#		var ar = arrow.instantiate()
+#		$Mesh/Nozzle.add_child(ar)
+#		ar.global_position = $Mesh/Nozzle.global_position
+#		stats.ammo_arrow -= 1
+		if spear.state == spear.STATE.HELD:
+			throw_spear()
+			
+	if Input.is_action_just_pressed("recall"):
+		spear.recall()
+
 		
 	if Input.is_action_pressed("aim"):
 		animation_tree.set("parameters/Aiming/transition_request", "Aim")
@@ -157,3 +162,10 @@ func _on_sprint_timer_timeout() -> void:
 	tween.parallel().tween_property(animation_tree, "parameters/Dash/scale", 3, 0.1)
 	tween.parallel().tween_property(animation_tree, "parameters/WalkScale/scale", 3, 0.1)
 	tween.parallel().tween_property(camera_3d, "fov", 100, 0.5)
+
+func _on_axe_returned():
+#	state_machine.travel("Catch")
+	pass
+	
+func throw_spear():
+	spear.throw()
