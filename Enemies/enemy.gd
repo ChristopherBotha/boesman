@@ -2,10 +2,15 @@ extends CharacterBody3D
 
 @export var detectComponent : DectectionComponent
 @export var healthComp : HealthComponent
+@onready var skeleton_3d: Skeleton3D = $Enemy/Armature/Skeleton3D
 
 @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 @onready var playback = $Enemy/AnimationTree.get("parameters/playback")
 @onready var animation_tree: AnimationTree = $Enemy/AnimationTree
+
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+var died := false
 
 var current_rotation : Quaternion 
 var vel := Vector3.ZERO
@@ -23,8 +28,11 @@ func set_target_loc(val: Vector3):
 func _physics_process(delta: float) -> void:
 	var rot : Quaternion = animation_tree.get_root_motion_rotation()
 	
-	if not is_on_floor():
-		velocity.y -= 20 * delta
+	if Engine.time_scale < 1 and not is_on_floor(): 
+		velocity.y -= gravity * 20 * delta
+	elif Engine.time_scale == 1 and not is_on_floor():
+		velocity.y -= gravity * delta
+		
 	
 	if is_on_floor() and reached == false:
 		current_rotation = get_quaternion()
@@ -41,10 +49,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		velocity = rot * current_rotation * animation_tree.get_root_motion_position() / delta * 0.5
 		velocity = velocity.rotated(Vector3.UP, $Enemy/Armature.rotation.y)
-
+		
 	move_and_slide()
-
+	
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	reached = true
 	vel = vel.lerp(Vector3.ZERO,0.05)
+
+func activate_ragdoll()-> void:
+	skeleton_3d.physical_bones_start_simulation()
+

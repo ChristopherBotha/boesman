@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5alf3ll8qc7o"]
+
+[ext_resource type="Texture2D" uid="uid://detjwwyo7rvl3" path="res://Sky/NightSkyGradient.tres" id="1_lo7l2"]
+[ext_resource type="Script" path="res://Sky/DayNightCycle.gd" id="1_rx1rg"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_awdln"]
+rayleigh_coefficient = 1.5
+mie_coefficient = 0.06
+mie_eccentricity = 0.96
+night_sky = ExtResource("1_lo7l2")
+
+[sub_resource type="Sky" id="Sky_2wcyj"]
+sky_material = SubResource("PhysicalSkyMaterial_awdln")
+
+[sub_resource type="Environment" id="Environment_t8dnn"]
+background_mode = 2
+sky = SubResource("Sky_2wcyj")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_gi_inject = 1.5
+volumetric_fog_length = 500.0
+volumetric_fog_ambient_inject = 5.0
+volumetric_fog_sky_affect = 0.2
+adjustment_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_62bil"]
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+
+[node name="DayNightCycle" type="Node3D"]
+script = ExtResource("1_rx1rg")
+timeRate = 500.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t8dnn")
+camera_attributes = SubResource("CameraAttributesPractical_62bil")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.996195, -0.0871559, 0, 0.0871559, -0.996195, 0, 0, 0)
+light_color = Color(1, 0.894118, 0.917647, 1)
+shadow_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="property_list_changed" from="DirectionalLight3D" to="." method="_on_directional_light_3d_property_list_changed"]

@@ -11,10 +11,14 @@ class_name HealthComponent
 		
 func hurt(damage) -> void:
 	current_health -= damage
-	
+	if current_health <= 0.0:
+		owner.died = true
+		owner.activate_ragdoll()
+		QuestSignalBus.emit_signal("quest_completed", States.current_active_quest)
+		
 func heal(healing) -> void:
 	current_health += healing
-
+	
 func _ready()->void:
 	current_health = max_health
 	

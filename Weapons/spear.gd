@@ -80,8 +80,12 @@ func recall():
 	velocity = Vector3.ZERO
 
 func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if state == STATE.RECALLED:
+	if state == STATE.RECALLED or state == STATE.HELD:
 		return
-	
+		
+	if body.is_in_group("Enemies"):
+		body.healthComp.hurt(100000)
+			
+		
 	velocity = Vector3.ZERO
 	state = STATE.LANDED

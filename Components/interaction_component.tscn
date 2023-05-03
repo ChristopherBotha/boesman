@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://jc86ncwi4tw5"]
+[gd_scene load_steps=4 format=3 uid="uid://jc86ncwi4tw5"]
 
 [ext_resource type="Script" path="res://Components/InteractionComponent.gd" id="1_igxtf"]
-[ext_resource type="AudioStream" uid="uid://cely2u6utgdpg" path="res://Sounds/Short - Ploppy Plop.wav" id="2_2ftie"]
-[ext_resource type="Texture2D" uid="uid://b6lo6kfnsbm01" path="res://Art/tile_0004.png" id="3_rm40k"]
+[ext_resource type="AudioStream" uid="uid://deb31lbit1uu7" path="res://Sounds/09. X-MENS SKIT.wav" id="2_wwchc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uifr2"]
 size = Vector3(5, 5, 5)
@@ -22,8 +21,7 @@ shape = SubResource("BoxShape3D_uifr2")
 [node name="Sounds" type="Node" parent="."]
 
 [node name="InteractSound" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("2_2ftie")
-pitch_scale = 1.67
+stream = ExtResource("2_wwchc")
 
 [node name="buttons_prompt" type="TextureRect" parent="."]
 texture_filter = 1
@@ -38,7 +36,6 @@ offset_right = 20.0
 offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_rm40k")
 
 [connection signal="body_entered" from="InteractArea3D" to="." method="_on_interact_area_3d_body_entered"]
 [connection signal="body_exited" from="InteractArea3D" to="." method="_on_interact_area_3d_body_exited"]

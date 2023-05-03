@@ -80,3 +80,4 @@ signal increaseMana()
 signal increaseDamage()
 signal increasePhysical()
 signal increaseMagical()
+

@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SignalBus="*res://Globals/signal_bus.gd"
 Game="*res://Globals/Game.gd"
+States="*res://Globals/states.gd"
+QuestSignalBus="*res://Globals/Quest_Signal_Bus.gd"
 
 [editor_plugins]
 

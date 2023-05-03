@@ -6,7 +6,6 @@ extends Node3D
 func _ready() -> void:
 	spawn_level()
 
-
 func spawn_level():
 	var level = resource.all_resources_dict["test_level"].instantiate()
 	$Level.add_child(level)

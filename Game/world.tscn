@@ -1,40 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvl8h75vucy0u"]
+[gd_scene load_steps=4 format=3 uid="uid://dvl8h75vucy0u"]
 
 [ext_resource type="Script" path="res://Game/world.gd" id="1_61mtu"]
 [ext_resource type="Resource" uid="uid://bjk4urcut6mvr" path="res://Game/FolderListResouce.tres" id="2_5qd01"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_c1607"]
-
-[sub_resource type="Sky" id="Sky_b2suy"]
-sky_material = SubResource("PhysicalSkyMaterial_c1607")
-
-[sub_resource type="Environment" id="Environment_drcj8"]
-background_mode = 2
-sky = SubResource("Sky_b2suy")
-tonemap_mode = 3
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+[ext_resource type="PackedScene" uid="uid://b5alf3ll8qc7o" path="res://Sky/day_night_cycle.tscn" id="3_q6txe"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_61mtu")
 resource = ExtResource("2_5qd01")
 levels = "res://Levels"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_drcj8")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(0, 0, 0.568627, 1)
-light_energy = 0.2
-shadow_enabled = true
-shadow_bias = 0.01
-shadow_opacity = 0.69
-shadow_blur = 0.82
+[node name="DayNightCycle" parent="." instance=ExtResource("3_q6txe")]
+timeRate = 100.0
 
 [node name="Level" type="Node3D" parent="."]

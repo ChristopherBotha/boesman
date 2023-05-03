@@ -41,7 +41,6 @@ func _ready()-> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	skeleton_3d.get_bone_pose(6)
-	print(aim_cast.get_target_position())
 	SignalBus.emit_signal("playerLocation", global_position)
 	_handle_input(delta)
 	_button_inputs(delta)
@@ -132,8 +131,6 @@ func _button_inputs(delta)->void:
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(camera_3d, "fov", 25, 0.1)
 		tween.parallel().tween_property(crosshair, "modulate", Color(1,1,1,1), 0.5)
-#		tween.parallel().tween_property(camera_3d, "h_offset", 0.5, 0.05)
-#		tween.parallel().tween_property(camera_3d, "v_offset", 0.25, 0.05)
 
 	elif Input.is_action_just_released("aim"):
 		
@@ -143,14 +140,10 @@ func _button_inputs(delta)->void:
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(camera_3d, "fov", 75, 0.1)
 		tween.parallel().tween_property(crosshair, "modulate", Color(1,1,1,0),0.5)
-#		tween.parallel().tween_property(camera_3d, "h_offset", 0, 0.05)
-#		tween.parallel().tween_property(camera_3d, "v_offset", 0, 0.05)
-		
+
 		if aim_cast.is_colliding():
 			pass
 
-	
-	
 	if Input.is_action_just_pressed("equip"):
 		animation_tree.set("parameters/EquipBow/active", true)
 	
