@@ -84,7 +84,7 @@ void vertex() {
 	vec4 local_wind_direction;
 	if (y_billboard)
 	{
-		local_wind_direction = vec4(wind_direction.x, 1.0, wind_direction.y, 0.0)*CAMERA_MATRIX;
+		local_wind_direction = vec4(wind_direction.x, 1.0, wind_direction.y, 0.0)*VIEW_MATRIX;
 	} else
 	{
 		local_wind_direction = vec4(wind_direction.x, 1.0, wind_direction.y, 0.0)*WORLD_MATRIX;

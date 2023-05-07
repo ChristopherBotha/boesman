@@ -10,6 +10,6 @@ resource = ExtResource("2_5qd01")
 levels = "res://Levels"
 
 [node name="DayNightCycle" parent="." instance=ExtResource("3_q6txe")]
-timeRate = 100.0
+timeRate = 240.0
 
 [node name="Level" type="Node3D" parent="."]

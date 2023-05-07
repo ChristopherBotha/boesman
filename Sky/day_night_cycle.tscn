@@ -14,6 +14,8 @@ sky_material = SubResource("PhysicalSkyMaterial_awdln")
 
 [sub_resource type="Environment" id="Environment_t8dnn"]
 background_mode = 2
+background_energy_multiplier = 2.0
+background_canvas_max_layer = 1
 sky = SubResource("Sky_2wcyj")
 ambient_light_source = 3
 reflected_light_source = 2
@@ -23,6 +25,9 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+glow_intensity = 2.53
+glow_strength = 1.29
+glow_bloom = 0.12
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 volumetric_fog_gi_inject = 1.5
@@ -30,6 +35,9 @@ volumetric_fog_length = 500.0
 volumetric_fog_ambient_inject = 5.0
 volumetric_fog_sky_affect = 0.2
 adjustment_enabled = true
+adjustment_brightness = 1.02
+adjustment_contrast = 1.05
+adjustment_saturation = 1.2
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_62bil"]
 auto_exposure_enabled = true

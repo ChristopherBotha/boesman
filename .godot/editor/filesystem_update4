@@ -1,4 +1,6 @@
-res://Weapons/spear.tscn
-res://Sky/NightSkyGradient.tres
-res://Game/world.tscn
 res://Levels/test_level.tscn
+res://Sky/NightSkyGradient.tres
+res://Shaders/Grass/sha_grass.gdshader
+res://Game/world.tscn
+res://Weapons/spear.tscn
+res://Sky/day_night_cycle.tscn
