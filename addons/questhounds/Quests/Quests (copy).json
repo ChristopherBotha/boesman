@@ -1,0 +1,10 @@
+{
+	"Make a Bow":{
+		"quest_name" : "Make a Bow", 
+		"quest_desc" : "This bow will be your primary weapon", 
+		"objectives" : ["Find a rope","Find 5 sticks"]}, 
+	"Make your Spear":{
+		"quest_name" : "Make your Spear", 
+		"quest_desc" : "This spear will be your secodnary weapon", 
+		"objectives" : ["Find iron","Find 1 long stick","find 1 piece of rope"]}
+}

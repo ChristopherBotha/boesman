@@ -22,10 +22,12 @@ SignalBus="*res://Globals/signal_bus.gd"
 Game="*res://Globals/Game.gd"
 States="*res://Globals/states.gd"
 QuestSignalBus="*res://Globals/Quest_Signal_Bus.gd"
+QuestChannel="*res://addons/questhounds/quest_channel.gd"
+QuestTracker="*res://addons/questhounds/quest_tracker.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg", "res://addons/godot_gameplay_systems/plugin.cfg", "res://addons/questhounds/plugin.cfg")
 
 [gui]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo0o3jkkvgqrq"]
+
+[ext_resource type="Script" path="res://addons/questhounds/Components/Tree.gd" id="1_vt2pm"]
+
+[node name="Tree" type="Tree"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -413.0
+offset_top = 54.0
+offset_right = -71.0
+offset_bottom = 229.0
+grow_horizontal = 0
+hide_root = true
+select_mode = 2
+scroll_horizontal_enabled = false
+script = ExtResource("1_vt2pm")

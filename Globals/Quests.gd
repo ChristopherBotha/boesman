@@ -1,6 +1,7 @@
 extends Control
 class_name QuestStart
 
+@onready var quest : Quest
 var quest_name : String = "Hi"
 var quest_description : String = "Daar"
 
@@ -12,6 +13,9 @@ var quest_description : String = "Daar"
 @onready var quest_complete_sound: AudioStreamPlayer = $questsound
 
 func _ready() -> void:
+#	quest._init()
+#	print(quest._objectives())
+	
 	quest_name_label.text = quest_name
 	quest_description_label.text = quest_description	
 	quest_complete_sound.play()
