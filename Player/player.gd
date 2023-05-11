@@ -9,13 +9,12 @@ class_name Player
 @onready var crosshair: TextureRect = $crosshair
 
 @onready var aim_cast: RayCast3D = $CameraOrbit/h/v/SpringArm3D/Camera3D/AimCast
-
-
 @export var healthComp : HealthComponent
 @export var stats : StatsComponent
 @export var actions : StateComponent
 @export var footLeft : FootComponent
 @export var footRight : FootComponent
+@onready var mesh: Node3D = $Mesh
 
 @onready var camera_3d: Camera3D = $CameraOrbit/h/v/SpringArm3D/Camera3D
 @onready var camera_orbit: Node3D = $CameraOrbit
@@ -37,7 +36,7 @@ var prev_cam_rot = 0.0
 
 func _ready()-> void:
 	animation_tree.set("parameters/Transition/current_state", "Walk")
-
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	skeleton_3d.get_bone_pose(6)
@@ -45,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	_handle_input(delta)
 	_button_inputs(delta)
 	move_and_slide()
-
+		
 func _input(event):
 
 	if event is InputEventKey:
@@ -133,8 +132,6 @@ func _button_inputs(delta)->void:
 		tween.parallel().tween_property(crosshair, "modulate", Color(1,1,1,1), 0.5)
 
 	elif Input.is_action_just_released("aim"):
-		
-		
 		animation_tree.set("parameters/Aiming/transition_request", "not_Aim")
 		actions.aiming = false
 		var tween = get_tree().create_tween()

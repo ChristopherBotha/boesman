@@ -1,8 +1,8 @@
 extends CharacterBody3D
-
+class_name Spear
 signal returned
 
-
+@export var spearTeleport : SpearTeleport
 @export var recall_curve: Curve
 @export_flags_3d_physics var aim_collision_mask
 
@@ -22,11 +22,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	state = STATE.HELD
 	pass # Replace with function body.
 
 func _physics_process(delta):	
 	if state == STATE.RECALLED: #state == STATE.THROWN || 
 		rotate_object_local(Vector3.RIGHT, deg_to_rad(spin_speed))
+		
+	if Input.is_action_just_pressed("ability"):
+		AbilitySignalBus.emit_signal("teleport_to_spear", owner, self)
 		
 	if state == STATE.THROWN:
 		

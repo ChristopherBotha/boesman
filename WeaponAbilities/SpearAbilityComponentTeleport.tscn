@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvcu8l0lfj1ub"]
+
+[ext_resource type="Script" path="res://WeaponAbilities/SpearAbilityComponentTeleport.gd" id="1_pl58n"]
+
+[node name="SpearAbilityComponentTeleport" type="Node3D"]
+script = ExtResource("1_pl58n")

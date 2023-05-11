@@ -14,10 +14,11 @@ size = Vector3(0.2, 0.255, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_viycj"]
 size = Vector3(0.15, 1.203, 0.15)
 
-[node name="Spear" type="CharacterBody3D"]
+[node name="Spear" type="CharacterBody3D" node_paths=PackedStringArray("spearTeleport")]
 collision_layer = 128
 collision_mask = 131
 script = ExtResource("1_tjaax")
+spearTeleport = NodePath("")
 recall_curve = SubResource("Curve_eodpa")
 spin_speed = 20.0
 

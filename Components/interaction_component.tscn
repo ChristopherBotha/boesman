@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jc86ncwi4tw5"]
 
 [ext_resource type="Script" path="res://Components/InteractionComponent.gd" id="1_igxtf"]
-[ext_resource type="AudioStream" uid="uid://deb31lbit1uu7" path="res://Sounds/09. X-MENS SKIT.wav" id="2_wwchc"]
+[ext_resource type="AudioStream" uid="uid://cely2u6utgdpg" path="res://Sounds/Short - Ploppy Plop.wav" id="2_1fmvp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uifr2"]
 size = Vector3(5, 5, 5)
@@ -21,7 +21,8 @@ shape = SubResource("BoxShape3D_uifr2")
 [node name="Sounds" type="Node" parent="."]
 
 [node name="InteractSound" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("2_wwchc")
+stream = ExtResource("2_1fmvp")
+pitch_scale = 2.54
 
 [node name="buttons_prompt" type="TextureRect" parent="."]
 texture_filter = 1

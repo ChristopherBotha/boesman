@@ -1,8 +1,10 @@
+res://Globals
+res://Player
+res://Weapons
+/home/christopher/Desktop
 res://Materials
 res://Shaders/Grass
 res://Sky
-res://Globals
-res://Weapons
 res://Models
 res://Components
 res://Levels
@@ -10,7 +12,6 @@ res://Game/
 res://
 res://UI
 res://Fonts
-res://Player
 res://Player/
 res://dialogues
 res://Enemies

@@ -1,14 +1,16 @@
+Node3D
+CharacterBody3D
+QuestTree
+Label
 MultiMeshInstance3D
 AnimationPlayer
 Timer
 MeshInstance3D
 Camera3D
 DirectionalLight3D
-Node3D
 WorldEnvironment
 CSGBox3D
 ColorRect
-Label
 AudioStreamPlayer
 CollisionShape3D
 RigidBody3D
@@ -17,7 +19,6 @@ RichTextLabel
 Control
 WeakSpotComponent
 Area3D
-CharacterBody3D
 TextureProgressBar
 Button
 VBoxContainer
@@ -29,5 +30,3 @@ RayCast3D
 ProgressBar
 BoneAttachment3D
 StaticBody3D
-RootMotionView
-AnimationTree
