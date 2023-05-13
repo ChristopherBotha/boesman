@@ -1,3 +1,5 @@
+res://Animations
+res://Models
 res://Globals
 res://Player
 res://Weapons
@@ -5,7 +7,6 @@ res://Weapons
 res://Materials
 res://Shaders/Grass
 res://Sky
-res://Models
 res://Components
 res://Levels
 res://Game/
@@ -17,4 +18,3 @@ res://dialogues
 res://Enemies
 res://Particles
 res://Shaders
-res://Animations

@@ -35,6 +35,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var prev_cam_rot = 0.0
 
 func _ready()-> void:
+	SignalBus.connect("catch_spear", catch_spear)
 	animation_tree.set("parameters/Transition/current_state", "Walk")
 	
 func _physics_process(delta: float) -> void:
@@ -83,10 +84,10 @@ func _handle_input(delta)-> void:
 		
 	if is_on_floor():
 		## NOTE: The 0.5 prevents foot sliding form happening
-		velocity = rot * current_rotation * animation_tree.get_root_motion_position() / delta * 0.5
+		velocity = rot * current_rotation * animation_tree.get_root_motion_position() / delta 
 		velocity = -velocity.rotated(Vector3.UP, $Mesh.rotation.y)
 
-func _button_inputs(delta)->void:
+func _button_inputs(_delta)->void:
 	
 	if is_on_floor() and Input.is_action_pressed("sprint") and actions.aiming == false:
 		if actions.sprinting == false:
@@ -117,7 +118,9 @@ func _button_inputs(delta)->void:
 #		ar.global_position = $Mesh/Nozzle.global_position
 #		stats.ammo_arrow -= 1
 		if spear.state == spear.STATE.HELD:
-			throw_spear()
+			print("throw spear")
+			animation_tree.set("parameters/ThrowSpear/request", true)
+#			throw_spear()
 			
 	if Input.is_action_just_pressed("recall"):
 		spear.recall()
@@ -157,5 +160,11 @@ func _on_axe_returned():
 #	state_machine.travel("Catch")
 	pass
 	
-func throw_spear():
-	spear.throw()
+func throw_spear()-> void:
+	SignalBus.emit_signal("throw_spear")
+	
+func catch_spear()-> void:
+	animation_tree.set("parameters/CatchSpear/request", true)
+
+func spear_returned()-> void:
+	SignalBus.emit_signal("spear_returned")

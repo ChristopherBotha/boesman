@@ -23,8 +23,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state = STATE.HELD
-	pass # Replace with function body.
-
+	SignalBus.connect("throw_spear", throw)
+	SignalBus.connect("spear_returned", spear_returned)
+	
 func _physics_process(delta):	
 	if state == STATE.RECALLED: #state == STATE.THROWN || 
 		rotate_object_local(Vector3.RIGHT, deg_to_rad(spin_speed))
@@ -45,7 +46,8 @@ func _physics_process(delta):
 			global_position = parent.global_position
 			global_rotation = parent.global_rotation
 			top_level = false
-			state = STATE.HELD
+			
+			SignalBus.emit_signal("catch_spear")
 			emit_signal("returned")
 		else:
 			var x = recall_curve.sample_baked(recall_progress / recall_start.distance_to(parent.global_position))
@@ -93,3 +95,6 @@ func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		
 	velocity = Vector3.ZERO
 	state = STATE.LANDED
+
+func spear_returned()-> void:
+	state = STATE.HELD

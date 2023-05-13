@@ -81,3 +81,6 @@ signal increaseDamage()
 signal increasePhysical()
 signal increaseMagical()
 
+signal throw_spear()
+signal catch_spear()
+signal spear_returned()
