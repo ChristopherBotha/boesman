@@ -46,7 +46,7 @@ func _physics_process(delta):
 			global_position = parent.global_position
 			global_rotation = parent.global_rotation
 			top_level = false
-			
+			spear_returned()
 			SignalBus.emit_signal("catch_spear")
 			emit_signal("returned")
 		else:

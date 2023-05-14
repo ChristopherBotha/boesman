@@ -1,17 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvl8h75vucy0u"]
+[gd_scene load_steps=7 format=3 uid="uid://dvl8h75vucy0u"]
 
 [ext_resource type="Script" path="res://Game/world.gd" id="1_61mtu"]
 [ext_resource type="Resource" uid="uid://bjk4urcut6mvr" path="res://Game/FolderListResouce.tres" id="2_5qd01"]
-[ext_resource type="PackedScene" uid="uid://b5alf3ll8qc7o" path="res://Sky/day_night_cycle.tscn" id="3_q6txe"]
 [ext_resource type="Script" path="res://addons/questhounds/Components/Tree.gd" id="4_mjlge"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5mm3l"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_gp4hg"]
+sky_material = SubResource("ProceduralSkyMaterial_5mm3l")
+
+[sub_resource type="Environment" id="Environment_kspr2"]
+background_mode = 2
+sky = SubResource("Sky_gp4hg")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_61mtu")
+ocean = "res://Scenes/Ocean.tscn"
 resource = ExtResource("2_5qd01")
 levels = "res://Levels"
 
-[node name="DayNightCycle" parent="." instance=ExtResource("3_q6txe")]
-timeRate = 240.0
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kspr2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -20,6 +37,7 @@ offset_left = 16.0
 offset_top = 14.0
 offset_right = 56.0
 offset_bottom = 32.0
+text = "138"
 
 [node name="QuestTree" type="Tree" parent="."]
 anchors_preset = 1

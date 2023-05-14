@@ -34,9 +34,9 @@ func _process(delta: float) -> void:
 			emit_signal("interaction")
 			if dialogue == true:
 				dialogue_component.action()
-			elif quest == true:
-				QuestSignalBus.emit_signal("new_quest","Murder","Kill the red guy","Peace of mind")
-			
+#			elif quest == true:
+#				QuestSignalBus.emit_signal("new_quest","Murder","Kill the red guy","Peace of mind")
+#
 func _on_interact_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		can_interact = true

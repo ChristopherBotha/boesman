@@ -84,3 +84,6 @@ signal increaseMagical()
 signal throw_spear()
 signal catch_spear()
 signal spear_returned()
+
+signal Ocean(val)
+signal spawn_ocean(val)

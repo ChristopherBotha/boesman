@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2so871yngysl"]
+
+[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="1_7w8q6"]
+[ext_resource type="Texture2D" uid="uid://cp36bcagyqnhi" path="res://Materials/TexNormal.tres" id="2_frgdf"]
+[ext_resource type="Texture2D" uid="uid://c4ivcv3yidkkv" path="res://Materials/texNormal2.tres" id="3_a1qcr"]
+[ext_resource type="Texture2D" uid="uid://bek2fdlvq0gw7" path="res://Materials/Wave.tres" id="4_vg200"]
+[ext_resource type="Texture2D" uid="uid://cm0ayh0ngyycn" path="res://Materials/wavebump.tres" id="5_bj8vl"]
+[ext_resource type="Script" path="res://Water/water_plane.gd" id="6_p22k5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xt8xg"]
+size = Vector2(10.05, 10.05)
+subdivide_width = 199
+subdivide_depth = 199
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aux5w"]
+render_priority = 0
+shader = ExtResource("1_7w8q6")
+shader_parameter/albedo = Color(0, 0.32, 0.43, 1)
+shader_parameter/albedo2 = Color(0, 0.47, 0.76, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(0.5, -0.2)
+shader_parameter/wave_direction2 = Vector2(-0.5, 0.5)
+shader_parameter/time_scale = 0.1
+shader_parameter/noise_scale = 24.935
+shader_parameter/height_scale = 3.895
+shader_parameter/color_deep = Color(0.11, 0.29, 0.33, 1)
+shader_parameter/color_shallow = Color(0, 0.47, 0.76, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = 0.3
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/wave = ExtResource("4_vg200")
+shader_parameter/wave_bump = ExtResource("5_bj8vl")
+shader_parameter/texture_normal = ExtResource("2_frgdf")
+shader_parameter/texture_normal2 = ExtResource("3_a1qcr")
+
+[node name="water_plane" type="MeshInstance3D"]
+mesh = SubResource("QuadMesh_xt8xg")
+surface_material_override/0 = SubResource("ShaderMaterial_aux5w")
+script = ExtResource("6_p22k5")

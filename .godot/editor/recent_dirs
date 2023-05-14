@@ -1,3 +1,6 @@
+res://Scenes
+res://Water
+res://Shaders
 res://Animations
 res://Models
 res://Globals
@@ -17,4 +20,3 @@ res://Player/
 res://dialogues
 res://Enemies
 res://Particles
-res://Shaders

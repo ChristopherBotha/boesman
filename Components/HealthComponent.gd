@@ -14,7 +14,6 @@ func hurt(damage) -> void:
 	if current_health <= 0.0:
 		owner.died = true
 		owner.activate_ragdoll()
-		QuestSignalBus.emit_signal("quest_completed", States.current_active_quest)
 		
 func heal(healing) -> void:
 	current_health += healing

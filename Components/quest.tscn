@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8jtkpyrx1b2v"]
+
+[ext_resource type="AudioStream" uid="uid://cxs627r6bc6ks" path="res://Sounds/Drone - Distant Orchestra.wav" id="1_y6o7r"]
+
+[sub_resource type="GDScript" id="GDScript_4q7qo"]
+script/source = "extends Control
+class_name QuestStart
+
+@onready var quest : Quest
+var quest_name : String = \"Hi\"
+var quest_description : String = \"Daar\"
+
+@export var on_screen_delay : float = 2.0
+@export var trans_delay : float = 1.0
+
+@onready var quest_name_label: Label = $questName
+@onready var quest_description_label: Label = $questName/questDescription
+@onready var quest_complete_sound: AudioStreamPlayer = $questsound
+
+func _ready() -> void:
+#	quest._init()
+#	print(quest._objectives())
+	
+	quest_name_label.text = quest_name
+	quest_description_label.text = quest_description	
+	quest_complete_sound.play()
+	
+	Engine.time_scale = 0.1
+	
+	var tween = get_tree().get_root().create_tween().bind_node(self).set_speed_scale(1.0/ Engine.time_scale)
+	
+	tween.tween_property(self, \"modulate\", Color(1,1,1,1),trans_delay+1).set_delay(on_screen_delay -1).set_trans(Tween.TRANS_QUART)
+	tween.tween_property(self, \"modulate\", Color(1,1,1,0),trans_delay).set_delay(on_screen_delay)
+	tween.tween_property(Engine,\"time_scale\",1,0.5).set_delay(0.01)
+	tween.tween_callback(queue_free)
+
+"
+
+[node name="Quest" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_4q7qo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.615686)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="questName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.5
+offset_top = -44.5
+offset_right = 233.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
+text = "Quest Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="questDescription" type="Label" parent="questName"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = 44.0
+offset_right = 251.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Complete this task to get a nice reward"
+horizontal_alignment = 1
+
+[node name="questsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_y6o7r")
+volume_db = -4.561

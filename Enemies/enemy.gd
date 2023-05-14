@@ -20,10 +20,10 @@ var reached : bool = false
 func _ready() -> void:
 	SignalBus.connect("playerLocation", set_target_loc)
 	
-func set_target_loc(val: Vector3):
-	navigation_agent.target_position = val
+func set_target_loc(val: Player):
+	navigation_agent.target_position = val.global_position
 	if reached == false:
-		look_at(val,Vector3.UP)
+		look_at(val.global_position,Vector3.UP)
 	
 func _physics_process(delta: float) -> void:
 	var rot : Quaternion = animation_tree.get_root_motion_rotation()

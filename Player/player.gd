@@ -39,13 +39,14 @@ func _ready()-> void:
 	animation_tree.set("parameters/Transition/current_state", "Walk")
 	
 func _physics_process(delta: float) -> void:
+
 	# Add the gravity.
 	skeleton_3d.get_bone_pose(6)
-	SignalBus.emit_signal("playerLocation", global_position)
+	SignalBus.emit_signal("playerLocation", self)
 	_handle_input(delta)
 	_button_inputs(delta)
 	move_and_slide()
-		
+
 func _input(event):
 
 	if event is InputEventKey:
@@ -164,7 +165,9 @@ func throw_spear()-> void:
 	SignalBus.emit_signal("throw_spear")
 	
 func catch_spear()-> void:
-	animation_tree.set("parameters/CatchSpear/request", true)
+#	animation_tree.set("parameters/CatchSpear/request", true)
+	pass
 
 func spear_returned()-> void:
 	SignalBus.emit_signal("spear_returned")
+

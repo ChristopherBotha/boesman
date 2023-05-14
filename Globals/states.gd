@@ -1,8 +1,4 @@
 extends Node
-class_name QuestSystem
-
-@onready var quest_ :=  preload("res://Globals/quest.tscn")
-@onready var complete_ := preload("res://Globals/quest_complete.tscn")
 
 # Keeps track of items fopr quests
 var has_cell_1_key : bool = false
@@ -34,24 +30,24 @@ var current_active_quests = {}
 # checks if quest is active
 var is_quest_active := false
 
-func _ready()-> void:
-	QuestSignalBus.connect("new_quest",get_new_quest)
-	QuestSignalBus.connect("quest_completed",get_completed_quest)
-	QuestSignalBus.connect("increase_day", increase_day)
+#func _ready()-> void:
+#	QuestSignalBus.connect("new_quest",get_new_quest)
+#	QuestSignalBus.connect("quest_completed",get_completed_quest)
+#	QuestSignalBus.connect("increase_day", increase_day)
 	
-func get_new_quest(q_name,q_desc,q_reward):
-	var _quest = quest_.instantiate()
-	_quest.quest_description = q_desc
-	current_active_quest = q_name
-	_quest.quest_name = q_name
-	
-	get_tree().get_root().add_child(_quest)
-
-func get_completed_quest(q_name)-> void:
-	var _complete = complete_.instantiate()
-	_complete.quest_name = q_name
-	
-	get_tree().get_root().add_child(_complete)
+#func get_new_quest(q_name,q_desc,q_reward):
+#	var _quest = quest_.instantiate()
+#	_quest.quest_description = q_desc
+#	current_active_quest = q_name
+#	_quest.quest_name = q_name
+#
+#	get_tree().get_root().add_child(_quest)
+#
+#func get_completed_quest(q_name)-> void:
+#	var _complete = complete_.instantiate()
+#	_complete.quest_name = q_name
+#
+#	get_tree().get_root().add_child(_complete)
 
 func increase_day()-> void:
 	days_passed += 1

@@ -13,8 +13,6 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	
-	
-	
 	if directional_light_3d.rotation_degrees >= Vector3(0,0,0) and directional_light_3d.rotation_degrees <= Vector3(155,0,0) :
 		directional_light_3d.light_energy = move_toward(directional_light_3d.light_energy,0.0,0.5)
 	else:
@@ -22,7 +20,6 @@ func _physics_process(delta: float) -> void:
 
 func increase_day():
 	directional_light_3d.rotation_degrees = Vector3.ZERO
-	QuestSignalBus.emit_signal("increase_day")
 	
 	
 

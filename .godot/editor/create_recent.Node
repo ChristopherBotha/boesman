@@ -1,3 +1,5 @@
+MeshInstance3D
+Camera3D
 BoneAttachment3D
 Node3D
 CharacterBody3D
@@ -6,8 +8,6 @@ Label
 MultiMeshInstance3D
 AnimationPlayer
 Timer
-MeshInstance3D
-Camera3D
 DirectionalLight3D
 WorldEnvironment
 CSGBox3D
