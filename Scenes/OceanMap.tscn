@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfui2hjydd0i0"]
-
-[ext_resource type="PackedScene" uid="uid://byk6ut5151qmd" path="res://Scenes/Ocean.tscn" id="1_gd7la"]
-
-[node name="OceanMap" type="Node3D"]
-
-[node name="Ocean" parent="." instance=ExtResource("1_gd7la")]
-transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, 0, 0, 0)

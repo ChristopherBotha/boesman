@@ -1,22 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5alf3ll8qc7o"]
+[gd_scene load_steps=10 format=3 uid="uid://b5alf3ll8qc7o"]
 
-[ext_resource type="Texture2D" uid="uid://detjwwyo7rvl3" path="res://Sky/NightSkyGradient.tres" id="1_lo7l2"]
 [ext_resource type="Script" path="res://Sky/DayNightCycle.gd" id="1_rx1rg"]
+[ext_resource type="Shader" path="res://Shaders/Clouds/clouds.gdshader" id="2_radx0"]
+[ext_resource type="CompressedTexture3D" uid="uid://dmnbivvadfore" path="res://Shaders/Clouds/perlworlnoise.tga" id="3_t3uwk"]
+[ext_resource type="Texture2D" uid="uid://sjxkas3pjacf" path="res://Shaders/Clouds/weather.bmp" id="4_w06gl"]
+[ext_resource type="CompressedTexture3D" uid="uid://mnx3auku6ryd" path="res://Shaders/Clouds/worlnoise.bmp" id="5_6d7tx"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_awdln"]
-rayleigh_coefficient = 1.5
-mie_coefficient = 0.06
-mie_eccentricity = 0.96
-night_sky = ExtResource("1_lo7l2")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jqa4r"]
+shader = ExtResource("2_radx0")
+shader_parameter/_density = 0.05
+shader_parameter/cloud_coverage = 0.25
+shader_parameter/_time_scale = 20.0
+shader_parameter/_time_offset = 641.5
+shader_parameter/rayleigh = 2.0
+shader_parameter/rayleigh_color = Color(0.266667, 0.486275, 1, 1)
+shader_parameter/mie = 0.058
+shader_parameter/mie_eccentricity = 0.8
+shader_parameter/mie_color = Color(0.388235, 0.6, 0.882353, 1)
+shader_parameter/turbidity = 10.0
+shader_parameter/sun_disk_scale = 11.992
+shader_parameter/ground_color = Color(0.380392, 0.572549, 1, 1)
+shader_parameter/exposure = 0.1
+shader_parameter/worlnoise = ExtResource("5_6d7tx")
+shader_parameter/perlworlnoise = ExtResource("3_t3uwk")
+shader_parameter/weathermap = ExtResource("4_w06gl")
 
-[sub_resource type="Sky" id="Sky_2wcyj"]
-sky_material = SubResource("PhysicalSkyMaterial_awdln")
+[sub_resource type="Sky" id="Sky_4exdd"]
+sky_material = SubResource("ShaderMaterial_jqa4r")
 
-[sub_resource type="Environment" id="Environment_t8dnn"]
+[sub_resource type="Environment" id="Environment_2wk6v"]
 background_mode = 2
-background_energy_multiplier = 2.0
-background_canvas_max_layer = 1
-sky = SubResource("Sky_2wcyj")
+sky = SubResource("Sky_4exdd")
 ambient_light_source = 3
 reflected_light_source = 2
 tonemap_mode = 3
@@ -25,36 +39,33 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
-glow_intensity = 2.53
-glow_strength = 1.29
-glow_bloom = 0.12
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
-volumetric_fog_gi_inject = 1.5
-volumetric_fog_length = 500.0
-volumetric_fog_ambient_inject = 5.0
-volumetric_fog_sky_affect = 0.2
+volumetric_fog_ambient_inject = 0.6
+volumetric_fog_sky_affect = 0.324
 adjustment_enabled = true
-adjustment_brightness = 1.02
-adjustment_contrast = 1.05
-adjustment_saturation = 1.2
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_62bil"]
-auto_exposure_enabled = true
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_f6t3l"]
+dof_blur_far_enabled = true
+dof_blur_near_enabled = true
+dof_blur_amount = 0.03
 
 [node name="DayNightCycle" type="Node3D"]
 script = ExtResource("1_rx1rg")
-timeRate = 500.0
+timeRate = 70.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_t8dnn")
-camera_attributes = SubResource("CameraAttributesPractical_62bil")
+environment = SubResource("Environment_2wk6v")
+camera_attributes = SubResource("CameraAttributesPractical_f6t3l")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.996195, -0.0871559, 0, 0.0871559, -0.996195, 0, 0, 0)
-light_color = Color(1, 0.894118, 0.917647, 1)
+[node name="SunMoon" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.768284, 0.64011, 0, -0.64011, -0.768284, 0, 0, 0)
+
+[node name="Sun" type="DirectionalLight3D" parent="SunMoon"]
 shadow_enabled = true
+shadow_reverse_cull_face = true
+
+[node name="Moon" type="DirectionalLight3D" parent="SunMoon"]
+light_color = Color(0, 0.113725, 0.447059, 1)
 
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="property_list_changed" from="DirectionalLight3D" to="." method="_on_directional_light_3d_property_list_changed"]

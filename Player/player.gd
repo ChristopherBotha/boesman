@@ -47,15 +47,6 @@ func _physics_process(delta: float) -> void:
 	_button_inputs(delta)
 	move_and_slide()
 
-func _input(event):
-
-	if event is InputEventKey:
-		match event.keycode:
-			KEY_ESCAPE:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			KEY_TAB:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _handle_input(delta)-> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta

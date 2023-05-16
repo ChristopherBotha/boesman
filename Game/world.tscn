@@ -1,36 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvl8h75vucy0u"]
+[gd_scene load_steps=10 format=3 uid="uid://dvl8h75vucy0u"]
 
 [ext_resource type="Script" path="res://Game/world.gd" id="1_61mtu"]
 [ext_resource type="Resource" uid="uid://bjk4urcut6mvr" path="res://Game/FolderListResouce.tres" id="2_5qd01"]
+[ext_resource type="PackedScene" uid="uid://b5alf3ll8qc7o" path="res://Sky/day_night_cycle.tscn" id="3_51idb"]
+[ext_resource type="Shader" path="res://Shaders/tv_static.gdshader" id="4_2xgv6"]
 [ext_resource type="Script" path="res://addons/questhounds/Components/Tree.gd" id="4_mjlge"]
+[ext_resource type="PackedScene" uid="uid://cildxjjsrb026" path="res://Shaders/Pixelation.tscn" id="5_ebgtx"]
+[ext_resource type="PackedScene" uid="uid://c71gy2w886gek" path="res://Components/pause_menu_component.tscn" id="7_lqb4j"]
+[ext_resource type="PackedScene" uid="uid://cqjvcm5k3pam2" path="res://Shaders/fog_volume.tscn" id="8_yqilb"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5mm3l"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iel8i"]
+shader = ExtResource("4_2xgv6")
+shader_parameter/UPDATE_INTERVAL = 0.163
+shader_parameter/STATIC_GRANULARITY = 0.005
+shader_parameter/EDGE_BLUR = 0.5
+shader_parameter/BORDER_SIZE = 0.3
+shader_parameter/stepping = 0.1
 
-[sub_resource type="Sky" id="Sky_gp4hg"]
-sky_material = SubResource("ProceduralSkyMaterial_5mm3l")
-
-[sub_resource type="Environment" id="Environment_kspr2"]
-background_mode = 2
-sky = SubResource("Sky_gp4hg")
-tonemap_mode = 2
-glow_enabled = true
-
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" node_paths=PackedStringArray("pause_menu")]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.701569, 8.44043, -69.3684)
 script = ExtResource("1_61mtu")
+pause_menu = NodePath("PauseMenuComponent")
 ocean = "res://Scenes/Ocean.tscn"
 resource = ExtResource("2_5qd01")
 levels = "res://Levels"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_kspr2")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="Level" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="DayNightCycle" parent="Level" instance=ExtResource("3_51idb")]
+timeRate = 30.0
+
+[node name="Pixelate" parent="." instance=ExtResource("5_ebgtx")]
+mouse_filter = 2
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iel8i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Fps" type="Label" parent="."]
 offset_left = 16.0
@@ -50,3 +62,17 @@ offset_bottom = 147.0
 grow_horizontal = 0
 hide_root = true
 script = ExtResource("4_mjlge")
+
+[node name="PauseMenuComponent" parent="." instance=ExtResource("7_lqb4j")]
+
+[node name="FogVolume" parent="." instance=ExtResource("8_yqilb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.733, 2.63282, 0)
+size = Vector3(174.96, 5, 130.96)
+
+[node name="Rain" type="Button" parent="."]
+offset_left = 942.0
+offset_top = 329.0
+offset_right = 1072.0
+offset_bottom = 377.0
+
+[connection signal="pressed" from="Rain" to="." method="_on_rain_pressed"]

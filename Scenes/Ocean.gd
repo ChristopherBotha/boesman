@@ -23,7 +23,7 @@ func createOceanTiles():
 		instance.set_scale(Vector3(tileScale, 1.0, tileScale)); # Ignore Y value because of planes
 
 func _init() -> void:
-	self.scale = Vector3(6,1,6)
+	self.scale = Vector3(10,1,10)
 	
 func _ready():
 	createOceanTiles();

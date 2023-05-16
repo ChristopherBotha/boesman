@@ -27,7 +27,7 @@ AbilitySignalBus="*res://Globals/AbilitySignalBus.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg", "res://addons/questhounds/plugin.cfg")
+enabled=PackedStringArray("res://addons/questhounds/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/wigglebone/plugin.cfg")
 
 [gui]
 

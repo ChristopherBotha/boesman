@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqjvcm5k3pam2"]
+
+[ext_resource type="Shader" path="res://Shaders/fog.gdshader" id="1_8o7dn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smrvu"]
+shader = ExtResource("1_8o7dn")
+shader_parameter/base_density = 0.305
+shader_parameter/base_color = Color(1, 0, 0, 1)
+shader_parameter/fade_out_height = 2.0
+shader_parameter/fade_out_distance = 1.5
+shader_parameter/noise_amounts = Vector3(0.4, 0.35, 0.25)
+shader_parameter/noise_scales = Vector3(1, 2, 4)
+shader_parameter/noise_velocity1 = Vector3(0.5, 0, 0)
+shader_parameter/noise_velocity2 = Vector3(1, 0, -1)
+shader_parameter/noise_velocity3 = Vector3(0, 0.6, 0.3)
+
+[node name="FogVolume" type="FogVolume"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.77083, 0)
+size = Vector3(174.965, 2, 130.956)
+material = SubResource("ShaderMaterial_smrvu")

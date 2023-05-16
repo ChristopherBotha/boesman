@@ -87,3 +87,10 @@ signal spear_returned()
 
 signal Ocean(val)
 signal spawn_ocean(val)
+
+signal pause_menu()
+signal pixelate()
+
+
+signal start_rain()
+signal end_rain()
